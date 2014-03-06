@@ -1,0 +1,128 @@
+\subsection{Generic two-port circuits}
+\begin{frame}{Generic two-port circuits}
+During the next experiments we will explore a few configurations of two-port circuits. The typical setup will be similar to Fig. \ref{fig:Generic_two_port} below.
+\begin{figure}[hbt]
+	\begin{circuitikz}
+		\draw
+			(0,0) node[ground] {}
+			to [sinusoidal voltage source, o-o, l=$\epsilon(t)$] ++(0,2)
+			to [generic, o-o, l=$Z_g$] ++(2,0)
+			to [generic, o-o, l=$Z_1$] ++(2,0)
+			(4,2) to [short,o-o,l_=a] ++(1,0)
+			(4,2) to [generic, o-o, l=$Z_2$] ++(0,-2)
+			node[ground] {}
+			;
+		%Description of subparts
+		\draw [decorate,decoration={brace,amplitude=8pt},
+					xshift=0pt, yshift=0pt]
+					(2,-1) -- (-0.5,-1)
+					node[black,midway,yshift=-20pt]
+						{AC generator};
+		\draw [decorate,decoration={brace,amplitude=8pt},
+					xshift=0pt, yshift=0pt]
+					(5,-1) -- (2.1,-1)
+					node[black,right,yshift=-20pt]
+						{Two-port circuit};	
+	\end{circuitikz}
+  \caption{\tiny{Generic two-port circuit setup. $Z_g$ represents the internal impedance of the AC generators, $Z_1,Z_2$ are any generic linear circuit components. The arrows $V_1$ and $V_2$ indicate where we connect  oscilloscope channels to the circuit. }}
+  \label{fig:Generic_two_port}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Resistive voltage divider}
+The simplest example of a two-port circuit is the voltage divider 			you learned in F328/F329 \cite{Walker:2008aa}. You obtain it by 			simple replacing $Z_{1,2}$ from Fig. \ref{fig:Generic_two_port} with two resistors.
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\tpn{R_1}{R_2}
+				\end{column}
+		\begin{column}{0.5\textwidth}
+		From KCL (Kirchhoff Circuit's Law):
+			\begin{eqnarray}
+			\Rightarrow v_1(t)=R_1 i(t)+ R_2 i(t)\\
+			\Rightarrow i(t)=\frac{v_1(t)}{R_1+R_2}
+			\label{eq:voltagediv_i}
+  			\end{eqnarray}
+		The voltage drop measured in channel 2 is given by
+		\begin{equation}
+  			v_2(t)=R_2 i(t)=\frac{R_2}{R_1+R_2}v_1(t)
+  			\label{eq:voltagediv_v2}
+		\end{equation}
+		
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Resistive voltage divider}
+Based on Eq. \ref{eq:voltagediv_v2}, it is obvious now why such a circuit is called the voltage divider; the voltage measured on the \textbf{output port} of the circuit ($v_2$) is a fraction of the \textbf{input port} voltage ($v_1$).
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\tpn{R_1}{R_2}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+		Using Eqs. \ref{eq:voltagediv_i} and \ref{eq:voltagediv_v2} one can now define the \textbf{frequency response} of the resistive voltage divider. For a given sinusoidal input, $v_1(t)=V_1\sin(\omega t)$, the output voltage will be given by 
+\begin{equation}
+  v_2(t)=\frac{R_2}{R_1+R_2}V_1\sin(\omega t)
+  \label{eq:voltagediv_v2_freq}
+\end{equation}
+From Eq. \ref{eq:voltagediv_v2_freq} it is clear that the output voltage is \textbf{in-phase} with the input voltage but with a different amplitude.
+
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Resistive voltage divider}
+One can then define an output voltage $v_2(t)=V_2\sin(\omega t)$, where the amplitude $V_2=\frac{R_2}{R_1+R_2}V_1$. We now define a important quantity:
+\begin{definition}
+The response function of the two-port circuit network $H(\omega)$ is input-output relation $H(\omega)\equiv\frac{V_2(\omega)}{V_1(\omega)}$.
+\end{definition}
+Note however that although we included an explicit frequency dependence on the $H(\omega)$, in the trivial case of the resistive voltage divider $H=R_2/(R_1+R_2)$ does not depend on frequency. That simply reflects the fact that the voltage drop in a resistor is proportional to the current flowing through it.\\ In the laboratory it means that regardless of the AC generator frequency, the ratio of the voltage amplitudes measured in channels 1,2 will always be given by  $R_2/(R_1+R_2)$.
+%		\begin{columns}
+%			\begin{column}{0.5\textwidth}
+%				\tpn{R_1}{R_2}
+%			\end{column}
+%			\begin{column}{0.5\textwidth}
+%			
+%			\end{column}
+%		\end{columns}
+\end{frame}
+
+\begin{frame}{Resistive voltage divider: Numerical example}
+
+\end{frame}
+
+\subsection{RC voltage divider - Filters}
+
+\begin{frame}{RC voltage divider}
+We can try to apply the same principles used in the resistive voltage divider to a slightly more complex one, involving both a resistor and a capacitor. You shold also have learned about this circuit in F328/F329 \cite{Walker:2008aa}. You obtain it by 			simple replacing $Z_{1,2}$ from Fig. \ref{fig:Generic_two_port} with a capacitor and a resistor.
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\tpn{R}{C}
+			\tpn{C}{R}
+				\end{column}
+		\begin{column}{0.5\textwidth}
+		From KCL (Kirchhoff Circuit's Law):
+			\begin{eqnarray}
+			\Rightarrow v_1(t)=R_1 i(t)+ R_2 i(t)\\
+			\Rightarrow i(t)=\frac{v_1(t)}{R_1+R_2}
+			\label{eq:voltagediv_i}
+  			\end{eqnarray}
+		The voltage drop measured in channel 2 is given by
+		\begin{equation}
+  			v_2(t)=R_2 i(t)=\frac{R_2}{R_1+R_2}v_1(t)
+  			\label{eq:voltagediv_v2}
+		\end{equation}
+		
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+
+%(0,0) node[ground] {} (0,0)
+%to [sinusoidal voltage source, o-o, l=$\epsilon(t)$] ++(0,2)
+%to [R, o-o, l=$R_g$] ++(2,0)
+%to [generic, o-o, l=$Z_1$] ++(2,0)
+%to [generic, o-o, l=$Z_2$] --(0,2)
+%;
