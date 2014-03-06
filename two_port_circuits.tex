@@ -102,22 +102,26 @@ We can try to apply the same principles used in the resistive voltage divider to
 				\end{column}
 		\begin{column}{0.5\textwidth}
 		From KCL (Kirchhoff Circuit's Law):
-			\begin{eqnarray}
-			\Rightarrow v_1(t)=R_1 i(t)+ R_2 i(t)\\
-			\Rightarrow i(t)=\frac{v_1(t)}{R_1+R_2}
-			\label{eq:voltagediv_i}
-  			\end{eqnarray}
-		The voltage drop measured in channel 2 is given by
-		\begin{equation}
-  			v_2(t)=R_2 i(t)=\frac{R_2}{R_1+R_2}v_1(t)
-  			\label{eq:voltagediv_v2}
-		\end{equation}
+			\begin{equation}
+			\Rightarrow v_1(t)=R i(t)+  q(t)/C
+			\label{eq:rc_1}
+  			\end{equation}
+  			In contrast with the resistive divider (Eq. \ref{eq:voltagediv_i}), Eq. \ref{eq:rc_1} is an ordinary differential equation (ODE). Note that either circuit shown in the left follows the same equation. The difference is the voltage drop measured in channel 2 which will be given by
+		\begin{eqnarray}
+		     v_2(t)=q(t)/C\\
+		     v_2(t)=R i(t)
+  			\label{eq:rc_v2}
+		\end{eqnarray}
 		
 		\end{column}
 	\end{columns}
 \end{frame}
 
+\begin{frame}{RC voltage divider}
+In order for to Eqs. \ref{eq:rc_v2} to be useful, one must solve the ODE \ref{eq:rc_1}. It is a inhomogeneous ODE where the dependent variable is the charge $q(t)$. We can decompose its solution in two parts, $q(t)=q_h(t)+q_p(t)$, where $q_h(t)=q_0 \exp(-t/\tau)$ is the solution of the homogenous equation ($v_1=0$) and $q_p(t)=$ust have In the particular case of sinusoidal input, $v_1(t)=V_1\sin(\omega t)$, 
+\end{frame}
 
+\begin{figure}
 
 
 %(0,0) node[ground] {} (0,0)
