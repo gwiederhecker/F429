@@ -196,43 +196,113 @@ From Eq.\ref{eq:rc_v2final_r} we learn a lot about how the circuit respond to a 
 		The KCL equation now reads
 \begin{eqnarray}
 v_1(t)=L \frac{di}{dt} + q(t)/C +R i(t)\label{eq:rlc_kcl1}\\
-\Rightarrow \frac{1}{L}\frac{dv_1}{dt}=\frac{d^2i}{dt^2} + \frac{R}{L} \frac{di}{dt} + \frac{1}{LC}i
+\Rightarrow \frac{1}{L}\frac{dv_1}{dt}=\frac{d^2i}{dt^2} + \textcolor{blue}{\frac{R}{L}} \frac{di}{dt} + \textcolor{blue}{\frac{1}{LC}}i\\
+\Rightarrow \frac{1}{L}\frac{dv_1}{dt}=\frac{d^2i}{dt^2} + \textcolor{blue}{\gamma} \frac{di}{dt} + \textcolor{blue}{\omega_0^2} i
 \label{eq:rlc_kcl2}
   \end{eqnarray}
-  Of course we could repeat the process of attempting to find a solution of the form $i(t)=i_0 \cos(\omega t+\phi)$ for a given $v_1(t)=V_1 \cos(\omega t)$. That would work perfectly and you can work out the result.
+Where we defined $\textcolor{blue}{\gamma} \equiv R/L[T^{-1}]$ and $\textcolor{blue}{\omega_0} \equiv 1/LC[T^{-2}]$. Of course we could repeat the process of attempting to find a solution of the form $i(t)=i_0 \cos(\omega t+\phi)$ for a given $v_1(t)=V_1 \cos(\omega t)$. That would work perfectly and you can work out the result.
   
-We want however a more powerful method for looking at such circuits!
+\textbf{We want however a more powerful method for looking at such circuits!}
 		\end{column}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Complex numbers \& Trigonometric functions}
-\begin{figure}[hbt]
-  \includegraphics[width=\textwidth]{fasor0.pdf}
-  \caption{Phasor at t=0}
-\end{figure}
-\end{frame}
 
-\begin{frame}{Complex numbers \& Trigonometric functions}
-\begin{figure}[hbt]
-  \includegraphics[width=\textwidth]{fasor0p2.pdf}
-  \caption{Phasor at t=0.2}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Complex numbers \& Trigonometric functions}
-The connection between these things lies on the identity
+\begin{frame}[allowframebreaks]{Complex numbers \& Trigonometric functions}
+The connection between complex number and trigonometric functions lies on the so-called Euler's identity
 \begin{equation}
   \exp(ix)=\cos(x)+j\sin(x)
+  \label{eq:euler}
 \end{equation}
-
-
-\end{frame}
-\begin{frame}{Complex numbers \& Trigonometric functions}
+A simple proof of this identity is given below:
 \begin{proof}
 Let's define $f(x)=\cos(x)+j\sin(x)$. Therefore $f'(x)=-\sin(x)+j\cos(x)=j[\cos(x)-\frac{1}{j}\sin(x)]$. However $j^2\equiv -1$, $\Rightarrow f'(x)=j[\cos(x)+{j}\sin(x)]=j f(x)\Rightarrow f(x)=\exp(j x)$
 \end{proof}
+One we are convinced that \ref{eq:euler} is true, we can write the driving term in KCL as $v_1(t)=V_1\cos(\omega t)=\Re(V_1\exp\i\omega t)$. If were to introduce a phase $\phi$ in the driving term, $v_1(t)=V_1\cos(\omega t+\phi)$, the complex exponential representation would follow as $v_1(t)=\Re((\textcolor{red}{V_1\exp j \phi} )\exp j\omega t)$. It is therefore convenient to define a complex amplitude $\tilde{V}_1\equiv\color{red}{V_1\exp j \phi}$ that can incorporate any phase. We use the $\tilde{ }$ to emphasize that $\tilde{V}_1$ is a complex number. The quantity $\tilde{V}_1$ is also known as a \textbf{phasor}; in this case a voltage \textbf{phasor}.
+Below we illustrate the geometric relation between a trigonometric waveform in a cartesian plot and its phasor analog in the complex plane. Assuming that the current flowing is $i(t)=\cos(2\pi t)$, we could think of them as the voltage drop in the three basic circuit components:
+\begin{eqnarray}
+\textcolor{blue}{v_R(t) = R i(t) = R \cos\omega t=\Re (R \exp j\omega t)}\\
+\textcolor{green}{v_C(t) = q(t)/C=\frac{1}{C}\int i(t) dt=\frac{\sin \omega t}{\omega C}=\Re\left(\frac{\exp j \omega t}{j\omega C}\right)}\\
+\textcolor{red}{v_L(t) = L \dt{i}=-L\sin \omega t=\Re (j \omega L \exp j\omega t)}
+\end{eqnarray}
+In the figures below we represent these waveforms both in trigonometric  and phasor representations. Note that as time evolves, the phase-relation (angle) between the phasors are constant.
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{fasor0.pdf}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{fasor0p2.pdf}
+	\end{column}
+\end{columns}
+
+Based on the previous definitions, one would be tempted to write Eq. \ref{eq:rlc_kcl2} in the form,
+\begin{equation}
+\frac{d^2i}{dt^2} + \gamma \dt{i} + \omega_0^2i=\frac{1}{L}\dt{ }\Re (\tilde{V}_1\ejt)
+\label{eq:kcl_rlc_c1}
+\end{equation}
+Eq. \ref{eq:kcl_rlc_c1} still represents a real physical current, as it should be. Let's assume for a moment however that the RHS (right-hand side) is an actual complex number and drop-off the $\Re()$ operation,
+\begin{equation}
+\frac{d^2\tilde{i}}{dt^2} + \gamma \dt{\tilde{i}} + \omega_0^2\tilde{i}=\frac{1}{L}\dt{ }(\tilde{V}_1\ejt)
+\label{eq:kcl_rlc_c2}
+\end{equation}
+Since we have a complex RHS, we should expect that the current is also complex; to remember that we wrote $\tilde{i}$ for the current. Now we explore the fact that Eq. \ref{eq:kcl_rlc_c2} is a \textbf{linear ODE} and therefore the superposition principle is valid. From Euler's identity we now we can decompose the RHS into a real and a imaginary component. The same applies for the LHS, $\tilde{i}=\Re(\tilde{i})+j\Im(\tilde{i})$. In order for \ref{eq:kcl_rlc_c2} to be true, both its real and imaginary parts must hold, therefore when we solve Eq. \ref{eq:kcl_rlc_c2} we are actually solving for both the real and imaginary parts of our fictitious imaginary current $\tilde{i}(t)$. The \textbf{actual physical current} can be obtained by taking $i(t)=\Re(\tilde{i}(t))$.
+
+We can now apply the same solution approach we used to solve \ref{eq:rc_1}. After the initial transients the homogeneous equation solution $\tilde{i}_h(t)$ decays and \textbf{the only important contribution is due to} the particular solution $\tilde{i}_p(t)$. Similarly, the ansatz solution is $\tilde{i}_p(t)=\tilde{i}_0 \ejt$. 
+
+Now we will be paid back for all the effort in using the complex exponential. The derivatives of the voltage (RHS)  and current (LHS) are straightforward:
+\begin{eqnarray}
+\dt{ }(\tilde{V}_1\ejt) = j \omega \textcolor{red}{\tilde{V}_1 \ejt}\\
+\dt{\tilde{i}_p}=j \omega \textcolor{red}{\tilde{i}_0 \ejt}\\
+\frac{d^2\tilde{i}}{dt^2}=(j \omega)^2 \textcolor{red}{\tilde{i}_0 \ejt}= -\omega^2 \textcolor{red}{\tilde{i}_0 \ejt}
+\end{eqnarray}
+
+
+Substituting these in Eq. \ref{eq:kcl_rlc_c2} we obtain
+\begin{equation}
+	(-\omega^2 + j\omega \frac{R}{L} +\frac{1}{L^2 C^2})\tilde{i}_0 \ejt = \frac{j \omega}{L}\tilde{V}_1 \ejt
+	\label{eq:kcl_rlc_c3}
+\end{equation}
+In order to Eq. \ref{eq:kcl_rlc_c3} to be valid for all times we must have
+\begin{equation}
+	\tilde{i}_0=\frac{1}{\textcolor{blue}{R}+j\left(\textcolor{blue}{\omega L-\frac{1}{\omega C}}\right)}\tilde{V}_1
+	\label{eq:i0_vs_v1}
+\end{equation}
+In contrast to the trigonometric function approach, where phase and amplitude equations (\ref{eq:rc_v2final_r}) were obtained separately from the $\cos$ and $\sin$ functions, the complex exponential approach gives us right away both information. 
+Eq. \ref{eq:i0_vs_v1} is a complex algebraic relation between current and voltage, resembling Ohm's law ($V=RI$). It is still useful to define a complex analog of resistance, which is known as impedance an denoted by $Z$. Using Eq. \ref{eq:i0_vs_v1} on can write
+\begin{equation}
+	\boxed{
+	\tilde{V}_1=\textcolor{red}{Z(\omega)} \tilde{i}_0
+	}
+	\label{eq:complex_impedance}
+\end{equation}
+Where we defined the \textbf{complex impedance} as 
+\begin{equation}
+\textcolor{red}{Z(\omega)}\equiv \textcolor{blue}{R+jX},
+\end{equation}
+where $\textcolor{blue}{X=\omega L-\frac{1}{\omega C}}$ is known as reactance of the circuit. The obtain the impedance all we need to do is sum up the individual impedances of the circuit components, in the RLC case $Z=\textcolor{blue}{Z_R}+\textcolor{green}{Z_C}+\textcolor{red}{Z_L}=\textcolor{blue}{R} + (\textcolor{green}{-j\omega C})+\textcolor{red}{(j\omega L)}$, it is that easy!
+
+Another useful quantity is the \textbf{complex admittance}, the reciprocal of the impedance, $Y\equiv Z^{-1}$, therefore,
+\begin{equation}
+  Y(\omega) = \frac{R}{R^2+X^2}-j\frac{X}{R^2+X^2} = \frac{R}{|Z|}-j\frac{X}{|Z|}
+\end{equation}
+To illustrate the usefullness of $Z,W$ lets set the AC source as the phase reference (without loss of generality), $\tilde{V}_1=V_1\exp\phi\rightarrow V_1\in\Re$. For example,
+\begin{itemize}
+\item the physical (\textbf{real}) current amplitude is given by $i_0=|\tilde{i}_0|=|Y||\tilde{V}_1|=\sqrt{R^2+X^2}V_1$
+\item the phase between the AC generator voltage and circuit current is simply $\psi=\tan^{-1}\left(\frac{-X}{R}\right)$
+\item the voltage drop across any element (or combinations) in the circuit with impedance $Z_e$ is given by $\tilde{V}_e=Z_e/Z\tilde{V}_1$
+\end{itemize}
+ 
+
+
+\end{frame}
+
+%\begin{frame}{Complex numbers \& Trigonometric functions}
+%
+%  \includegraphics[width=\textwidth,natwidth=100]{fasor0p2.pdf}
+%
+%\end{frame}
+
+\begin{frame}{Solving KCL using complex notation}
 
 \end{frame}
 
