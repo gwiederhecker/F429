@@ -1,3 +1,4 @@
+% !TEX root = F429_1s1014.tex
 \subsection{Generic two-port circuits}
 \begin{frame}{Generic two-port circuits}
 During the next experiments we will explore a few configurations of two-port circuits. The typical setup will be similar to Fig. \ref{fig:Generic_two_port} below.
@@ -31,26 +32,30 @@ During the next experiments we will explore a few configurations of two-port cir
 \end{frame}
 
 \begin{frame}{Resistive voltage divider}
-The simplest example of a two-port circuit is the voltage divider 			you learned in F328/F329 \cite{Walker:2008aa}. You obtain it by 			simple replacing $Z_{1,2}$ from Fig. \ref{fig:Generic_two_port} with two resistors.
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\tpn{R_1}{R_2}
-				\end{column}
-		\begin{column}{0.5\textwidth}
-		From KCL (Kirchhoff Circuit's Law):
-			\begin{eqnarray}
-			\Rightarrow v_1(t)=R_1 i(t)+ R_2 i(t)\\
-			\Rightarrow i(t)=\frac{v_1(t)}{R_1+R_2}
-			\label{eq:voltagediv_i}
-  			\end{eqnarray}
-		The voltage drop measured in channel 2 is given by
-		\begin{equation}
-  			v_2(t)=R_2 i(t)=\frac{R_2}{R_1+R_2}v_1(t)
-  			\label{eq:voltagediv_v2}
-		\end{equation}
-		
-		\end{column}
-	\end{columns}
+The simplest example of a two-port circuit is the voltage divider you learned in F328/F329 \cite{Walker:2008aa}. You obtain it by simple replacing $Z_{1,2}$ from Fig. \ref{fig:Generic_two_port} with two resistors.
+\vspace{10pt}
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\tpn{R_1}{R_2}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+	\pause
+	From KCL (Kirchhoff Circuit's Law):
+		\begin{eqnarray}
+		\Rightarrow v_1(t)=R_1 i(t)+ R_2 i(t)\\
+		\pause
+		\Rightarrow i(t)=\frac{v_1(t)}{R_1+R_2}
+		\label{eq:voltagediv_i}
+  		\end{eqnarray}
+%  		\pause
+	The voltage drop measured in channel 2 is given by
+	\begin{equation}
+  		v_2(t)=R_2 i(t)=\frac{R_2}{R_1+R_2}v_1(t)
+  		\label{eq:voltagediv_v2}
+	\end{equation}
+	
+	\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Resistive voltage divider}
@@ -288,7 +293,9 @@ Another useful quantity is the \textbf{complex admittance}, the reciprocal of th
 To illustrate the usefullness of $Z,W$ lets set the AC source as the phase reference (without loss of generality), $\tilde{V}_1=V_1\exp\phi\rightarrow V_1\in\Re$. For example,
 \begin{itemize}
 \item the physical (\textbf{real}) current amplitude is given by $i_0=|\tilde{i}_0|=|Y||\tilde{V}_1|=\sqrt{R^2+X^2}V_1$
+\pause
 \item the phase between the AC generator voltage and circuit current is simply $\psi=\tan^{-1}\left(\frac{-X}{R}\right)$
+\pause
 \item the voltage drop across any element (or combinations) in the circuit with impedance $Z_e$ is given by $\tilde{V}_e=Z_e/Z\tilde{V}_1$
 \end{itemize}
  
@@ -302,8 +309,72 @@ To illustrate the usefullness of $Z,W$ lets set the AC source as the phase refer
 %
 %\end{frame}
 
-\begin{frame}{Solving KCL using complex notation}
+\begin{frame}{Power Dissipation in RLC circuits}
+As current and voltage are time-dependent functions, we can define an instantaneous power dissipated in a given circuit component with a voltage drop $v(t)$ as
+\begin{equation}
+  P(t)=v(t)i(t),
+\end{equation}
+\pause
+where i(t) is the current flowing through the circuit component. \pause Writing $v(t)=v_0\cos(\omega t)$, $i(t)=v_0\cos(\omega t+\phi)$ we obtain,
+\begin{equation}
+  P(t)=\frac{1}{2}\left(v_0 i_0\cos(\phi)+\cos(2\omega t+\phi)\right),
+\end{equation}
+\pause
+The average power (over one period, $T=2\pi/\omega$) can be obtained as,
+\begin{equation}
+  \bar{P}\equiv\frac{1}{T}\int_0^{T}P(t)=\frac{1}{2}v_0 i_0\cos(\phi),
+\end{equation}
+\pause
+Two aspects must be noticed from Eq. above
+\begin{itemize}
+  \item 
+\end{itemize}
+\end{frame}
 
+\begin{frame}
+\begin{columns}
+	\begin{column}{0.33\textwidth}		
+	\includegraphics[width=\textwidth]{/Users/gsw/github/F429/potencia_instantanea_phi0.pdf}
+	\center{	$\phi=0^\circ$}
+	\end{column}
+	\pause
+	\begin{column}{0.33\textwidth}
+	\includegraphics[width=\textwidth]{/Users/gsw/github/F429/potencia_instantanea_phi45.pdf}
+		\center{	$\phi=0^\circ$}
+	\end{column}
+	\pause
+	\begin{column}{0.33\textwidth}
+	\includegraphics[width=\textwidth]{/Users/gsw/github/F429/potencia_instantanea_phi90.pdf}
+		\center{	$\phi=90^\circ$}
+	\end{column}
+\end{columns}
+
+\pause
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		In figure we show the time dependence of the instantaneous power (yellow curve) together with a unit voltage 	($v_0=1$, blue curve) and a unit current ($i_0=1$, red curve) and $\phi=45^{\circ}$. The green curve shows the 	average power $\bar{P}$. 
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=.8\textwidth]{/Users/gsw/github/F429/potencia_instantanea_phi45.pdf}
+		\end{column}
+	\end{columns}
+From Ohm's law we now that current can be easily measured from the voltage drop across the circuit's resistor $i(t)=\frac{1}{R}v_R(t)$
+\end{frame}
+\begin{frame}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{/Users/gsw/github/F429/v1_v2_eff_rlc.pdf}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{/Users/gsw/github/F429/pdiss_rlc.pdf}
+		\end{column}
+	\end{columns}
+\pause
+    E=mc\\
+    \pause
+    E=mc2\\
+    \pause
+    E=mc3\\
 \end{frame}
 
 
