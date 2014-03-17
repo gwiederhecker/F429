@@ -1,0 +1,142 @@
+\documentclass[letterpaper,12pt,openright,notitlepage]{report}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{indentfirst}        % indenta primeiro parágrafo
+\usepackage{graphicx}
+\usepackage{subfigure}
+\subfigcapmargin = .5cm
+
+\usepackage{fancyref}
+\usepackage{textcomp}      % \texttrademark
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\ackage{txfonts}
+\usepackage{color}
+\usepackage[brazil]{babel}    % hiphenação em portugues
+\usepackage{wrapfig}
+%Bold vectors and tensors
+\usepackage[bold]{hhtensor}
+%%\usepackage[round]{natbib}  % citações tipo  (nome-ano)
+\usepackage{natbib}  % citações tipo  [nome-ano]
+\usepackage{setspace}
+
+\usepackage[small]{caption}
+\setlength{\captionmargin}{20pt}
+
+\renewcommand*\thesection{\arabic{section}}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{booktabs}
+
+%-----TIKZ
+\usepackage{circuitikz}
+\usepackage{ifthen}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepgfmodule{shapes}
+\usepgfmodule{plot}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows}
+\usetikzlibrary{snakes}
+\usetikzlibrary{arrows,positioning} 
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
+
+%% Hyperlink options
+\usepackage{hyperref}
+%\hypersetup{colorlinks=true,       % false: boxed links; true: colored links
+%	linkcolor=blue,          % color of internal links
+%	citecolor=red,        % color of links to bibliography
+%	urlcolor=black,
+%	bookmarksnumbered=true,
+%	pdffitwindow=true, 
+%	bookmarks=true,
+%    	pdftitle={Controle e Interação de Fônons e Fótons em Fibras Ópticas de Cristal Fotônico},    		pdfauthor={Gustavo Silva Wiederhecker}     % author}           % color of external links
+%	}         % show bookmarks bar?
+
+%% tamanho do texto e margens
+\setlength{\topmargin}{-15pt} % extra vert. space + at the top of header: 23pt
+\setlength{\oddsidemargin}{0pt} % extra spc added at the left of odd page: 0pt
+\setlength{\evensidemargin}{-12pt} % ext. spc added at the left of even pg: 59pt
+\setlength{\textheight}{625pt} % height of the body: 592pt
+\setlength{\textwidth}{483pt} % width of the body: 470pt
+\setlength{\headheight}{15.6pt} % width of the body: 470pt
+\setlength{\footskip}{60pt}
+%% Estilo da página corrente e demais páginas
+\definecolor{Gray}{rgb}{0.5,0.5,0.5}
+\usepackage{fancyhdr} 
+\pagestyle{fancyplain}
+\usepackage{calc} 
+%\fancyheadoffset[LE,RO]{\marginparsep+\marginparwidth} 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} \fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage} 
+\fancyhead[LO]{\bfseries\rightmark} 
+\fancyhead[RE]{\bfseries\leftmark}
+
+\input
+
+%%%% Bold symbol macro for standard LaTeX users
+\providecommand{\boldsymbol}[1]{\mbox{\boldmath $#1$}}
+
+%%Figure path
+\graphicspath{{figures/}}
+%%COMANDOS
+\newcommand{\fig}{Fig. }
+%% Inicia o texto
+\begin{document}
+
+%% Commands
+\input{../shortcuts}
+%% Abrevia figuras e tabelas
+\def\figurename{Fig.}
+\def\tablename{Tab.}
+
+%% Página de rosto
+\include{f429_face}
+% Lista de conteúdo (sumário)
+\def\contentsname{Sumário}
+\tableofcontents
+
+%%% line spacing
+\onehalfspacing
+% Cap. 1 - Introdução
+%\include{F429_cap1}
+%\include{F429_cap2}
+%AC - Diodo semicondutor
+\include{F429_cap2_ap}
+%AC
+
+
+%%% Referências bibliogáficas (geradas automaticamente)
+%\addcontentsline{toc}{chapter}{Referências bibliográficas}
+%%\bibliographystyle{plainnat}  %% nome-ano
+%\bibliographystyle{unsrt}    %% numero
+%%%\bibliographystyle{osajnl}
+%%%\bibliography{tese}
+%\bibliography{references}
+
+\end{document}
+

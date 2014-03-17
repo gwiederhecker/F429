@@ -1,0 +1,81 @@
+\section{\label{sec:filtros} Experimento I - Filtros}
+\begin{figure}[hbt]
+\begin{center}
+\begin{circuitikz}[scale=1]
+		\draw
+			(0,0) node[ground] {}
+			to [sinusoidal voltage source, o-o, l=$\epsilon(t)$] ++(0,2)
+			to [generic, o-o, l=$Z_g$] ++(2,0)
+			to [generic, o-o, l=$Z_1$] ++(2,0)
+			(4,2) to [short,o-o] ++(1,0)
+			(4,2) to [generic, o-o, l=$Z_2$] ++(0,-2)
+			node[ground] {}
+			;
+		%Description of subparts
+		\draw [decorate,decoration={brace,amplitude=8pt},
+					xshift=0pt, yshift=0pt]
+					(2,-1) -- (-0.5,-1)
+					node[black,midway,yshift=-20pt]
+						{Gerador AC};
+		\draw [decorate,decoration={brace,amplitude=8pt},
+					xshift=0pt, yshift=0pt]
+					(5,-1) -- (2.1,-1)
+					node[black,right,yshift=-20pt]
+						{Circuito de duas portas};	
+	\end{circuitikz}
+  \caption{Generic two-port circuit setup. $Z_g$ represents the internal impedance of the AC generators, $Z_1,Z_2$ are any generic linear circuit components. The arrows $V_1$ and $V_2$ indicate where we connect  oscilloscope channels to the circuit. }
+  \end{center}
+  \label{fig:generic_two_port}
+\end{figure}
+%----------------------------------
+%-------OBJETIVOS------------------
+%----------------------------------
+\subsection{Objetivos}
+Entender o papel ...
+\subsection{Introdução}
+Introduction goes here...
+\subsubsection{Diodo demodulador ou detector}
+% \begin{wrapfigure}{r}{0.5\textwidth}
+%  \vspace{-20pt}
+%  \begin{center}
+%    \includegraphics[width=0.5\textwidth]{mod_e_demod}
+%  \end{center}
+%   \vspace{-20pt}
+%  \caption{Princípio de modulação de demodulação de um sinal.}
+%\end{wrapfigure}
+%----------------------------------
+%-------PREPARAÇÃO-----------------
+%----------------------------------
+\subsection{Preparação}
+\begin{enumerate}
+\item Calcule a função... 
+\end{enumerate}
+%----------------------------------
+%-------MATERIAL-----------------
+%----------------------------------
+
+%----------------------------------
+%----------Roteiro-----------------
+%----------------------------------
+\subsection{Roteiro A - Circuito RC}
+\begin{figure}
+\centering
+\subfigure[Circuito RC com tensão de saída medida no capacitor, $V_2=\frac{1}{j\omega C}i$]{
+\tpnc{resistor}{R}{capacitor}{C}}
+\subfigure[Circuito RC com tensão de saída medida no resistor, $V_2=R i$]{
+\tpnc{capacitor}{C}{resistor}{R}}
+\end{figure}
+
+
+\subsubsection*{Material}
+\begin{itemize}
+\item Diodo de  silício.
+\end{itemize}
+\subsubsection*{Caracterização do circuito LC}
+\subsection{Roteiro B - Circuito RLC}
+\subsubsection*{Caracterização da curva IV do diodo}
+%----------------------------------
+%----------Relatorio-----------------
+%----------------------------------
+\subsection{Relatório}
+

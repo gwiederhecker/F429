@@ -1,0 +1,44 @@
+\section{\label{sec:linhas_de_transmissao}Linhas de transmissão}
+
+\subsection*{Objetivos}
+Estudar experimentalmente o funcionamento de uma linha de transmissão e determinar a impedância característica, o coeficiente de reflexão e a velocidade de propagação de pulsos.
+\subsection*{Material}
+\begin{itemize}
+\item Cabo coaxial RG-58U (ou cabo de par trançado ou cabo de antena de TV) de comprimento (conhecido) x $\approx$ 100 m.
+\item Acoplador BNC "T"
+\item Gerador de pulsos de duração menor que 1 $\mu$s. No lugar de um gerador de pulsos pode ser utilizado um gerador de funções de pelo menos 2 MHz com duty-cycle variável (por exemplo, o Tektronix CFG 250): Selecione o modo de onda quadrada e ajuste o duty-cycle ao mínimo.
+\item Osciloscópio de pelo menos 50 MHz
+\item Resistores: 10, 22, 33, 47, 56, 75, 100, 220, 330 e 470 $\Omega$.
+\end{itemize}
+
+\subsection*{Roteiro}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{transmission_line1}
+\caption{a) Esquema de montagem. b) Pulsos observados no osciloscópio quando a linha não é terminada ($Z_T=\infty$). }
+\label{fig:transmission_line}
+\end{center}
+\end{figure}
+
+\begin{enumerate}
+\item Monte o circuito da figura \ref{fig:transmission_line}a). Ajuste a taxa de repetição de pulsos em 500 kHz ou menos e a duração do pulso entre 100 e 200 ns. Se não tiver um gerador de pulsos, pode utilizadar um gerador de funções de 2 MHz com duty-cycle variável (por exemplo, o Tektronix CFG 250): ajuste a frequência em 1 MHz ou menos; selecione o modo de onda quadrada e ajuste o duty-cycle ao mínimo. No canal 1 do osciloscópio verá o pulso de entrada   e o refletido  . No canal 2 verá o pulso no fim da linha   (utilize um cabo curto para ligar $Z_T$ ao canal 2). Para uma melhor estabilidade, utilize o sinal de sincronismo do gerador para disparar o osciloscópio pelo canal 3 (o sincronismo com o canal 1 também funciona bem).
+
+\item Meça o atraso temporal entre o pulso lançado e o refletido e determine a velocidade de propagação do pulso. (Utilize o comprimento medido, L, escrito na etiqueta do cabo). Compare este resultado com a velocidade a luz! Quanto é o índice de refração, n, do dielétrico do cabo? Quanto é a constante dielétrica relativa ($\epsilon_r\equiv=\epsilon/\epsilon_0=n^2$). Com este valor de $n$ você poderia medir o comprimento de um cabo idêntico com L desconhecido.
+
+\item Para valores fixos de amplitude ($V_0 = V^{+}(0)$), duração e periodicidade do pulso, meça a amplitude do pulso de retorno $V_r = V^{-}(2L)$ para vários valores de $Z_T$ (utilize resistores fixos, não a resistência de décadas) entre 10 e 330 $\Omega$, inclusive para o caso $Z_T = 0$ (curto circuito) e $Z_T = \infty$ (circuito aberto). Construa uma tabela com os valores de $Z_T$ e do coeficiente de reflexão normalizado $\rho_n = V_R/V_0$. O pulso refletido se deve anular quando $Z_T = Z_0$. Determine, assim, $Z_0$ experimentalmente. Utilize resistores em série e/ou em paralelo para obter mais valores de $Z_T$. Por exemplo, para obter 75 $\Omega$ (o valor nominal de $Z_0$ do cabo coaxial de TV a cabo) utilize dois de 150 $\Omega$ em paralelo.
+
+\item Aumente a duração do pulso gradualmente até alguns microssegundos e veja se entende o que acontece no osciloscópio. 
+
+\item Se $Z_T = \infty$ o pulso refletido tem amplitude $V_0 \exp(-\alpha L)$. Utilizando este fato, determine o coeficiente de atenuação ? (expresse o resultado em dB/100m: $\alpha[\text{dB}/100\text{m}] = 10^3 \alpha[\text{m}^{-1}]/\log(10)  \approx 434 \alpha[\text{m}^{-1}]$).
+
+\item Meça o atraso e a amplitude entre o pulso lançado e o pulso refletido (com $Z_T=0$) para  um cabo diferente do utilizado nos itens anteriores . Dispomos de cabos de rede de par trançado, ou UTP, cabo coaxial para TV a cabo e cabo coaxial de instrumentação RG-58 --- veja a Fig. \ref{fig:exemplo_cabos}. Calcule o valor do índice de refração  $n$ e $\alpha$) Compare os coeficientes de atenuação obtidos para os diferentes cabos (quanto menor é $\alpha$, melhor sua qualidade). 
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{transmission_line1-02}
+\caption{(a) Cabo de instrumentação (RG-58). (b) Cabo de TV a cabo (CATV: Cable TV). (c) Cabo de par trançado para redes de informática (UTP - Unshielded Twisted Pair). }
+\label{fig:exemplo_cabos}
+\end{center}
+\end{figure}
