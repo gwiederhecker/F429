@@ -1,13 +1,13 @@
 \section{\label{sec:interferometros}Interferômetros}
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{diagrama_radio_am}
-\caption{\textbf{Diagrama e exemplos de dois dos principais tipos de interferômetros ópticos, o interferômetro de Michelson e o de Fabry-Perot}.}
+\includegraphics{interferometers}
+\caption{\textbf{Diagrama e exemplos de duas importantes classes de interferômetros ópticos.} (a,d) Esquema de um interferômetro de Michelson (a) e de Fabry-Perot (d). O espelho $EM$ está preso a um parafuso micrométrico e pode ter sua posição controlada com precisão submicrométrica. (b,e) Intensidade óptica observada em um ponto do anteparo quando varia-se a posição do espelho. Em (e), as diferentes curvas representam inteferômetros Fabry-Perot montados com espelhos de diferentes refletivdades $R$.  (c,f,g) Distribuição transversal de intensidade observada  no anteparo quando o interferômetros estão alinhados.}
 \label{fig:interferometro}
 \end{center}
 \end{figure}
 \subsection*{Objetivos}
-Entender os princípios e aplicações de interferômetros ópticos e utilizá-los para medir deslocamentos nanométricos e para desvendar o conteúdo espectral de fontes luminosas. Este roterio explora os dois tipos de interferômetro mostrados na \fig\ref{fig:interferometro}. 
+Entender os princípios e aplicações de interferômetros ópticos, utilizando-los para medir deslocamentos nanométricos e para desvendar o conteúdo espectral de fontes luminosas. Este roteiro explora os dois tipos de interferômetro mostrados na \fig\ref{fig:interferometro}. 
 \subsection*{Introdução}
 \subsubsection*{Interferência entre ondas}
  \begin{wrapfigure}{r}{0.5\textwidth}
@@ -18,16 +18,16 @@ Entender os princípios e aplicações de interferômetros ópticos e utilizá-los par
    \vspace{-20pt}
   \caption{Princípio de modulação de demodulação de um sinal.}
 \end{wrapfigure}
-A interferência é um fenômeno comumente observado quando trata-se de ondas, o caso eletromagnético (ou óptico) é apenas um exemplo. O fenômeno de inteferência tem como base o princípio da superposição, segundo o qual o campo elétrico (ou magnético) resultante em um dado ponto do espaço é a soma linear entre o campo gerado por todas as fontes existentes no universo\footnote{É bastante intrigante pensar nisto. Imagine a sua posição espacial neste momento, existem fontes de campos eletromagnéticos distribuídos por todo o universo, algumas a bilhões de anos luz de distancia, outras tão próximas quanto seu telefone celular, que estão contribuindo para o campo elétrico total na sua posição atual.}. Em favor da simplicidade, consideremos o campo total gerado por duas fontes,
+A interferência é um fenômeno comumente observado quando trata-se de ondas, o caso eletromagnético (ou óptico) é apenas um exemplo. O fenômeno de inteferência tem como base o princípio da superposição, segundo o qual o campo elétrico (ou magnético) resultante em um dado ponto do espaço é a soma linear entre o campo gerado por todas as fontes existentes no universo\footnote{É bastante intrigante pensar nisto. Imagine a sua posição espacial neste momento, existem fontes de campos eletromagnéticos distribuídos por todo o universo, algumas a bilhões de anos luz de distância, outras tão próximas quanto seu telefone celular, todas contribuindo para o campo elétrico total na sua posição atual.}. Em favor da simplicidade, consideremos o campo total gerado por duas fontes,
 \begin{equation}
 \vec{E}(\vec{r},t)=\vec{E}_1(\vec{r},t)+\vec{E}_2(\vec{r},t)
 \end{equation}
-Para simplicar ainda mais o problema, vamos assumir a os campos $\vec{E}_1,\vec{E}_2$ são ondas planas propagando-se na direção $\hat{z}$ (veja Figura), neste caso podemos escrever,
+Para simplicar ainda mais o problema vamos considerar uma situação próxima à dos nossos interferômetros, vamos assumir a os campos $\vec{E}_1,\vec{E}_2$ são ondas planas monocromáticas com frequência $\omega$ propagando-se na direção $\hat{x}$\footnote{A direção $\hat{x}$, conforme indicado na Fig. \ref{fig:interferometro}, é paralela à direção que o espelho móvel ($EM$) se movimenta.}.  
 \begin{eqnarray}
-\vec{E}_1(\vec{r},t)=\vec{e}_1\cos(k_1 z-\omega_1 t+\theta_1)\\
-\vec{E}_2(\vec{r},t)=\vec{e}_2\cos(k_2 z-\omega_2 t+\theta_2)
+\vec{E}_1(\vec{r},t)=\vec{e}_1\cos(k_1 x-\omega t+\theta_1)\\
+\vec{E}_2(\vec{r},t)=\vec{e}_2\cos(k_2 x-\omega t+\theta_2)
 \end{eqnarray}
-nas quais $\vec{e}_1,\vec{e}_2$ são vetores constantes transversais à direção de propagação. As principais consequências da interferência são notadas quando detectamos o campo eletromagnético. A frequência óptica é tão alta, $\omega/2\pi\approx 300\times10^{12}$ Hz que não conseguimos detectar a variação do campo elétrico diretamente, como acontece em frequências baixas na qual pode-se usar um osciloscópio. Nestas frequências, entretanto, a energia dos fótons é tão grande ($>1$ eV) que eles podem ser absorvidos por transições entre níveis de energia de um átomo, molécula ou material semicondutor. No olho humano, eles são absorvido por moléculas, já nos dispositivos fotodetectores eles são absorvidos por materiais semicondutores. Portanto o que observamos a olho nu é a intensidade do campo eletromagnético, que a menos de uma constante é dada por,
+nas quais $\vec{e}_1,\vec{e}_2$ são vetores unitários ortogonais à direção de propagação que indicam a polarização do campo eletromagnético. As principais consequências da interferência são notadas quando detectamos o campo eletromagnético. A frequência óptica é tão alta, $\omega/2\pi\approx 300\times10^{12}$ Hz que não conseguimos detectar a variação do campo elétrico diretamente, como acontece em frequências baixas na qual pode-se usar um osciloscópio. Nestas frequências, entretanto, a energia dos fótons é tão grande ($>1$ eV) que eles podem ser absorvidos pelas transições eletrônicas de um átomo, molécula ou material semicondutor. No olho humano os fótons são absorvido por moléculas, já nos fotodetectores eles são absorvidos por materiais semicondutores (Si,Ge,GaAs, etc). Portanto o que observamos a olho nu é a intensidade do campo eletromagnético, que é proporcional à,
 \begin{equation}
 I(t)\propto|\vec{E}|^2=\vec{E}\cdot\vec{E}=|\vec{e}_1|^2\cos^2(\phi_1)+|\vec{e}_2|^2\cos^2(\phi_2)+\vec{e}_1\cdot\vec{e}_2\cos(\phi_1)\cos(\phi_2)
 \label{eq:i_inst}
@@ -39,14 +39,6 @@ na qual definimos as fases $\phi_{1,2}=k_{1,2}z-\omega_{1,2} t$. Obviamente a in
 \end{equation}
 Na Eq. \ref{eq:i_ave}, queremos dizer que com limite $T\rightarrow\infty$ que a escala de tempo de resposta do detector (olho ou fotodiodo) é muito maior que o período de todas as funções que aparecem na Eq. \ref{eq:i_inst}. Como demonstramos no apêndice, os períodos que surgem na Eq. \ref{eq:i_inst} são $\tau_1=2\pi/\omega_1$, $\tau_2=2\pi/\omega_2$ e os perídos de batimento $\tau^{(-)}=2\pi/(\omega_1-\omega_2)$ e $\tau^{(+)}=2\pi/(\omega_1+\omega_2)$. Como $\omega_1$ e $\omega_2$ são frequência ópticas, estes perídos são da ordem de $10^{-15}$ s! Portanto temos certeza que $T\gg\tau_1,\tau_2,\tau^{(+)}$
 
-Contudo, as ondas eletromagnéticas possuem a interessante propriedade de propagarem-se no vácuo e, em diversas faixas de frequência, com baixíssima atenuação. Estas propriedades lhes confere a sua vasta aplicação em transmissão de informação, seja em baixas frequências, i.e., rádio, ou em altas frequências, i.e. luz. Outra aplicação fundamental da luz está na metrologia, campo de estudo focado em medidas de precisão.  No regime óptico, ou seja, quando as ondas eletromagnéticas possuem comprimento de onda na faixa $(400\text{ nm}<\lambda<700\text{ nm})$, 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{FM}
-\caption{\textbf{Modulação de ondas}. (a) Modulação de amplitude (AM), $A(t)=(1+\delta \cos[\Omega t])\cos[\omega_c t]$. (b) Modulação de frequência (FM), $A(t)=\cos[\omega_c t+\delta \cos[\Omega t]]$}
-\label{fig:am_fm}
-\end{center}
-\end{figure}
 
 \subsubsection*{Antena}
 Quando uma onda eletromagnética com frequência $f_c$ e comprimento de onda $\lambda=c/f_c$  incide sobre uma antena, um dipolo oscilante é induzido na antena. O dipolo induzio gera uma corrente no circuito no qual a antena está conectada. Para que a excitação do dipolo seja eficiente

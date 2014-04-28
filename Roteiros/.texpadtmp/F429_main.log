@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.16)  16 MAR 2014 21:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.16)  28 APR 2014 08:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -658,9 +658,6 @@ Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is usel
 LaTeX Warning: Label `sec:linhas_de_transmissao' multiply defined.
 
 
-LaTeX Warning: Label `fig:am_fm' multiply defined.
-
-
 LaTeX Warning: Label `fig:tuning' multiply defined.
 
 
@@ -798,16 +795,34 @@ Underfull \hbox (badness 2698) in paragraph at lines 66--66
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 75.
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 6 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 80.
-)
+(babel)             in language  on input line 116.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [3
+(babel)             in language  on input line 116.
+[3
 
 ]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 120.
+)
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
 Package babel Info: Redefining portuges shorthand "|
@@ -837,17 +852,17 @@ Package babel Info: Redefining portuges shorthand "|
  [5] (./receptor_am.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
- <figures/diagrama_radio_am.pdf, id=167, 337.76187pt x 129.98563pt>
+ <figures/diagrama_radio_am.pdf, id=172, 337.76187pt x 129.98563pt>
 File: figures/diagrama_radio_am.pdf Graphic file (type pdf)
  <use figures/diagrama_radio_am.pdf>
 Package pdftex.def Info: figures/diagrama_radio_am.pdf used on input line 4.
 (pdftex.def)             Requested size: 338.09853pt x 130.11818pt.
- <figures/mod_e_demod.pdf, id=168, 363.3575pt x 139.52126pt>
+ <figures/mod_e_demod.pdf, id=173, 363.3575pt x 139.52126pt>
 File: figures/mod_e_demod.pdf Graphic file (type pdf)
  <use figures/mod_e_demod.pdf>
 Package pdftex.def Info: figures/mod_e_demod.pdf used on input line 16.
 (pdftex.def)             Requested size: 241.5pt x 92.73363pt.
- <figures/FM.pdf, id=170, 747.65823pt x 240.9pt>
+ <figures/FM.pdf, id=175, 747.65823pt x 240.9pt>
 File: figures/FM.pdf Graphic file (type pdf)
  <use figures/FM.pdf>
 Package pdftex.def Info: figures/FM.pdf used on input line 24.
@@ -859,7 +874,7 @@ Package babel Info: Redefining portuges shorthand "|
  [6 <./figures/diagrama_radio_am.pdf> <./figures/mod_e_demod.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./figures/mod_e_demod.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <figures/diode_demodulation.pdf, id=282, 361.35pt x 232.38219pt>
+>] <figures/diode_demodulation.pdf, id=286, 361.35pt x 232.38219pt>
 File: figures/diode_demodulation.pdf Graphic file (type pdf)
  <use figures/diode_demodulation.pdf>
 Package pdftex.def Info: figures/diode_demodulation.pdf used on input line 39.
@@ -868,7 +883,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 50.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 50.
- [7 <./figures/FM.pdf> <./figures/diode_demodulation.pdf>] <figures/tuning_lc.pdf, id=335, 167.08624pt x 121.91748pt>
+ [7 <./figures/FM.pdf> <./figures/diode_demodulation.pdf>] <figures/tuning_lc.pdf, id=338, 167.08624pt x 121.91748pt>
 File: figures/tuning_lc.pdf Graphic file (type pdf)
  <use figures/tuning_lc.pdf>
 Package pdftex.def Info: figures/tuning_lc.pdf used on input line 66.
@@ -877,7 +892,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 72.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 72.
- [8] <figures/diodo_iv.pdf, id=355, 156.90018pt x 87.30176pt>
+ [8] <figures/diodo_iv.pdf, id=358, 156.90018pt x 87.30176pt>
 File: figures/diodo_iv.pdf Graphic file (type pdf)
  <use figures/diodo_iv.pdf>
 Package pdftex.def Info: figures/diodo_iv.pdf used on input line 89.
@@ -894,7 +909,7 @@ Package babel Info: Redefining portuges shorthand "|
  [10 <./figures/diodo_iv.pdf>] (./linha_transmissao.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
- <figures/transmission_line1.pdf, id=435, 480.60152pt x 178.45671pt>
+ <figures/transmission_line1.pdf, id=438, 480.60152pt x 178.45671pt>
 File: figures/transmission_line1.pdf Graphic file (type pdf)
  <use figures/transmission_line1.pdf>
 Package pdftex.def Info: figures/transmission_line1.pdf used on input line 18.
@@ -908,7 +923,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 36.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 36.
- [12 <./figures/transmission_line1.pdf>] <figures/transmission_line1-02.pdf, id=586, 384.43123pt x 87.82813pt>
+ [12 <./figures/transmission_line1.pdf>] <figures/transmission_line1-02.pdf, id=589, 384.43123pt x 87.82813pt>
 File: figures/transmission_line1-02.pdf Graphic file (type pdf)
  <use figures/transmission_line1-02.pdf>
 Package pdftex.def Info: figures/transmission_line1-02.pdf used on input line 40.
@@ -921,56 +936,52 @@ Package babel Info: Redefining portuges shorthand "|
  [13 <./figures/transmission_line1-02.pdf>] (./Interferometros.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
-File: figures/diagrama_radio_am.pdf Graphic file (type pdf)
- <use figures/diagrama_radio_am.pdf>
-Package pdftex.def Info: figures/diagrama_radio_am.pdf used on input line 4.
-(pdftex.def)             Requested size: 338.09853pt x 130.11818pt.
+ <figures/interferometers.pdf, id=762, 455.24078pt x 131.49126pt>
+File: figures/interferometers.pdf Graphic file (type pdf)
+ <use figures/interferometers.pdf>
+Package pdftex.def Info: figures/interferometers.pdf used on input line 4.
+(pdftex.def)             Requested size: 455.23967pt x 131.49092pt.
 File: figures/mod_e_demod.pdf Graphic file (type pdf)
  <use figures/mod_e_demod.pdf>
 Package pdftex.def Info: figures/mod_e_demod.pdf used on input line 16.
 (pdftex.def)             Requested size: 241.5pt x 92.73363pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 24.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 24.
- [14]
+(babel)             in language  on input line 22.
+ [14 <./figures/interferometers.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 39.
  [15]
-File: figures/FM.pdf Graphic file (type pdf)
- <use figures/FM.pdf>
-Package pdftex.def Info: figures/FM.pdf used on input line 45.
-(pdftex.def)             Requested size: 434.69705pt x 140.06026pt.
 File: figures/diode_demodulation.pdf Graphic file (type pdf)
  <use figures/diode_demodulation.pdf>
-Package pdftex.def Info: figures/diode_demodulation.pdf used on input line 60.
+Package pdftex.def Info: figures/diode_demodulation.pdf used on input line 52.
 (pdftex.def)             Requested size: 144.90147pt x 93.18524pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 63.
  [16]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 81.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 81.
- [17]
 File: figures/tuning_lc.pdf Graphic file (type pdf)
  <use figures/tuning_lc.pdf>
-Package pdftex.def Info: figures/tuning_lc.pdf used on input line 87.
+Package pdftex.def Info: figures/tuning_lc.pdf used on input line 79.
 (pdftex.def)             Requested size: 144.90147pt x 105.73434pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 103.
+(babel)             in language  on input line 85.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 103.
- [18]
+(babel)             in language  on input line 85.
+ [17]
 File: figures/diodo_iv.pdf Graphic file (type pdf)
  <use figures/diodo_iv.pdf>
-Package pdftex.def Info: figures/diodo_iv.pdf used on input line 110.
+Package pdftex.def Info: figures/diodo_iv.pdf used on input line 102.
 (pdftex.def)             Requested size: 241.5pt x 134.38118pt.
-))
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 107.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 107.
+ [18]))
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 129.
 Package babel Info: Redefining portuges shorthand "|
@@ -990,19 +1001,19 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 22703 strings out of 493315
- 459070 string characters out of 6137903
- 588359 words of memory out of 5000000
- 25535 multiletter control sequences out of 15000+600000
+ 22951 strings out of 493315
+ 465277 string characters out of 6137903
+ 630406 words of memory out of 5000000
+ 25778 multiletter control sequences out of 15000+600000
  26109 words of font info for 71 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,63p,1259b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,63p,1259b,979s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/font
 s/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /Users/gsw/github/F429/Roteiros/.texpadtmp/F429_main.pdf (19 pages, 3445311 bytes).
+Output written on /Users/gsw/github/F429/Roteiros/.texpadtmp/F429_main.pdf (19 pages, 5645869 bytes).
 PDF statistics:
- 942 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 122 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1101 PDF objects out of 1200 (max. 8388607)
+ 595 compressed objects within 6 object streams
+ 126 named destinations out of 1000 (max. 500000)
+ 215 words of extra memory for PDF output out of 10000 (max. 10000000)
 

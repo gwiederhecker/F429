@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.16)  16 MAR 2014 20:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.16)  26 MAR 2014 23:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1178,10 +1178,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 472.
  ) 
 Here is how much of TeX's memory you used:
- 23931 strings out of 493315
- 517635 string characters out of 6137903
- 658606 words of memory out of 5000000
- 26721 multiletter control sequences out of 15000+600000
+ 23932 strings out of 493315
+ 517639 string characters out of 6137903
+ 658884 words of memory out of 5000000
+ 26722 multiletter control sequences out of 15000+600000
  11545 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  52i,19n,64p,790b,1401s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -73,6 +73,46 @@ Introduction goes here...
 \end{itemize}
 \subsubsection*{Caracterização do circuito LC}
 \subsection{Roteiro B - Circuito RLC}
+Nesta etapa desejamos estudar experimentalmente o fenômeno de ressonância em circuitos RLC. Iremos determinar a resposta em frequência deste circuito (amplitude e fase) e investigar suas principais características, frequência de ressonância, largura de banda e potência dissipada.
+\begin{figure}[hb]
+\subfigure[ ]{
+\begin{circuitikz}[scale=.8]
+		\node (Xi) at (0.7,0.7) {$V_1$};
+		\node (Xf) at (5.7,0.7) {$V_2$};
+		\draw [semithick,->] (Xi) -- (0.1,0.1);
+		\draw [semithick,->] (Xf) -- (5.1,0.1);
+		\draw	to [inductor, o-o, l_=L] ++(2,0)
+				to [capacitor, o-o, l_=C] ++(2,0)
+				(4,0) to [short,o-o] ++(1,0)
+				(4,0) to [resistor, o-o, l=R] ++(0,-2)
+				node[ground] {};
+	\end{circuitikz}}
+\subfigure[ ]{
+\begin{circuitikz}[scale=.8]
+		\node (Xi) at (0.7,0.7) {$V_1$};
+		\node (Xf) at (5.7,0.7) {$V_2$};
+		\draw [semithick,->] (Xi) -- (0.1,0.1);
+		\draw [semithick,->] (Xf) -- (5.1,0.1);
+		\draw	to [resistor, o-o, l_=R] ++(2,0)
+				to [capacitor, o-o, l_=C] ++(2,0)
+				(4,0) to [short,o-o] ++(1,0)
+				(4,0) to [inductor, o-o, l=L] ++(0,-2)
+				node[ground] {};
+	\end{circuitikz}}
+\subfigure[ ]{
+\begin{circuitikz}[scale=.8]
+		\node (Xi) at (0.7,0.7) {$V_1$};
+		\node (Xf) at (5.7,0.7) {$V_2$};
+		\draw [semithick,->] (Xi) -- (0.1,0.1);
+		\draw [semithick,->] (Xf) -- (5.1,0.1);
+		\draw	to [inductor, o-o, l_=L] ++(2,0)
+				to [resistor, o-o, l_=R] ++(2,0)
+				(4,0) to [short,o-o] ++(1,0)
+				(4,0) to [capacitor, o-o, l=C] ++(0,-2)
+				node[ground] {};
+	\end{circuitikz}}
+	\caption{\textbf{Diferentes configurações de um filtro RLC}. }
+\end{figure}
 \subsubsection*{Caracterização da curva IV do diodo}
 %----------------------------------
 %----------Relatorio-----------------
