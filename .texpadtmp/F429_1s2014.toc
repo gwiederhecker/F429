@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.20pt}
+\beamer@sectionintoc {1}{Two-port circuits}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Generic two-port circuits}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{RC voltage divider - Filters}{8}{0}{1}
