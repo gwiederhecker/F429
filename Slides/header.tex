@@ -1,0 +1,98 @@
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  %\usefonttheme{serif}
+}
+\setbeamertemplate{caption}[numbered]
+%\mode<presentation>
+%{
+%\usetheme{Warsaw}
+%}
+%\usefonttheme{structuresmallcapsserif}
+
+%----------------------------------------
+%            PACKAGES
+%----------------------------------------
+
+%--FIGURES
+%\usepackage{graphicx}
+\usepackage{subfigure}
+
+%--FONT
+%\usepackage{textcomp} 
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage{amssymb}
+\usepackage[bold]{hhtensor}
+\usepackage{array}
+%-----TIKZ
+\usepackage{circuitikz}
+\usepackage{ifthen}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgffor}
+\usepgfmodule{shapes}
+\usepgfmodule{plot}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows}
+\usetikzlibrary{snakes}
+\usetikzlibrary{arrows,positioning} 
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
+\usepackage{xcolor}
+\def\setcolormodel{cmyk}
+
+%--HYPERLINKS
+%\hypersetup{colorlinks=true,       % false: boxed links; true: colored links
+%	linkcolor=OliveGreen,          % color of internal links
+%	citecolor=BrickRed,        % color of links to bibliography
+%	urlcolor=Blue,
+%	bookmarksnumbered=true,
+%	pdffitwindow=true, 
+%	bookmarks=true}         % show
+%\usepackage{url}
+
+%--GRAPHICS PATH
+\graphicspath{{~/Dropbox/github/TOM/figures/}}
+
+
+
+%--Title slide configuration
+%\input{title_slide}
+\title[]{Alternate Currents \& Optics - F 429}
+
+\author[Gustavo Wiederhecker]{
+Gustavo Wiederhecker\\
+\vspace{10pt}
+some extra text 3
+}
+\date{March 2014}
+
+
+%--BEGIN DOCUMENT HERE!
+\begin{document}  
+% Shortcut fot tables and figures.
+\def\figurename{Fig.}
+\def\tablename{Tab.}  
+\ctikzset{bipoles/length=.7cm}
+
+\input{../shortcuts}
+
+

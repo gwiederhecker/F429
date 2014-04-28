@@ -1,0 +1,96 @@
+\section{\label{sec:linhas_de_transmissao}Diodo semicondutor e receptor AM}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{diagrama_radio_am}
+\caption{\textbf{Diagrama de um receptor de  rádio AM}.}
+\label{fig:radio_am}
+\end{center}
+\end{figure}
+\subsection*{Objetivos}
+Entender o papel dos componentes de um receptor AM (\textit{amplitude modulation}) e montar um receptor de ondas AM . Para tanto iremos estudar experimentalmente a curva IV (corrente-tensão) de um diodo e também a resposta do filtro de sintonia.
+\subsection*{Introdução}
+\subsubsection*{Diodo demodulador ou detector}
+ \begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{mod_e_demod}
+  \end{center}
+   \vspace{-20pt}
+  \caption{Princípio de modulação de demodulação de um sinal.}
+\end{wrapfigure}
+A transmissão de informação por ondas de rádio é feita através da modulação de uma onda portadora (\textit{carrier}) de alta frequência, $0.8<f_c<1.1$ MHz para AM (\textit{amplitude modulation}) ou $88<f_c<105$ MHz para FM (\textit{frequency modulation}), com o sinal de audio que deseja ser transmitido, tipicamente com frequência entre 20 Hz e 10 KHz. Na figura \ref{fig:am_fm} ilustramos estes dois tipos de modulação.  A modulação permite que a a informação seja transmitida através de uma portadora em uma frequência mais alta que a frequência do sinal; na frequência  da portadora espera-se melhores características de propagação, i.e., menor atenuação, dispersão. Também é possível utilizar outro tipo de onda, por exemplo, ondas eletromagnéticas para transmitir a informação, por exemplo, rádios AM exploram a alta refletividade da ionosfera para para transmitir  ondas eletromagnéticas por longas distâncias.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{FM}
+\caption{\textbf{Modulação de ondas}. (a) Modulação de amplitude (AM), $A(t)=(1+\delta \cos[\Omega t])\cos[\omega_c t]$. (b) Modulação de frequência (FM), $A(t)=\cos[\omega_c t+\delta \cos[\Omega t]]$}
+\label{fig:am_fm}
+\end{center}
+\end{figure}
+
+\subsubsection*{Antena}
+Quando uma onda eletromagnética com frequência $f_c$ e comprimento de onda $\lambda=c/f_c$  incide sobre uma antena, um dipolo oscilante é induzido na antena. O dipolo induzio gera uma corrente no circuito no qual a antena está conectada. Para que a excitação do dipolo seja eficiente
+na mesma, é importante que o comprimento da antena $L$ seja, aproximadamente,  uma fração inteira do comprimento de onda. No nosso laboratório $L\approx17$ m, aproximadamente, $\lambda/10$ para as frequências de rádio AM. 
+\subsubsection*{Filtro ressonante}
+Como existem diversas estações de rádio AM, é necessário também filtrar o sinal recebido pela antena.  Para tanto utilizaremos um circuito LC em paralelo, como mostra a Fig. \ref{fig:radio_am}, este filtro funciona como um passa-banda, selecione a estação de rádio que desejamos ouvir.
+\subsubsection*{Diodo demodulador ou detector}
+ \begin{wrapfigure}{r}{0.3\textwidth}
+  \vspace{-40pt}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{diode_demodulation}
+  \end{center}
+   \vspace{-20pt}
+  \caption{\textbf{Demodulação por um diodo}}
+\end{wrapfigure}
+
+ Da mesma forma que modulamos a portadora para transmitir o sinal é necessário demodular a onda recebida para podermos escutá-la no alto-falante. Este é o papel do diodo neste circuito, devido a sua curva IV não-linear este componente recupera o sinal de audio que foi modulado na onda portadora.
+ 
+\subsection*{Preparação}
+\begin{enumerate}
+\item Calcule a função de trasferência $H(\omega)$ do filtro LC mostrado na figura \ref{fig:radio_am}. Mostre que a transmitância ($|H|^2$) é dada por  $T(\omega)=\frac{L^2 \omega ^4 C_{in}^2}{\left(L \omega ^2 \left(C_{in}+C_v\right)-1\right){}^2}$. 
+\item Qual é a frequência de ressonância deste filtro? 
+\item Assumindo que o indutor possui $L=62\mu$H e o capacitor variável pode variar entre $30\text{ pf}<C_v<350\text{ pf}$, calcule a faixa de frequências que este filtro poderá sintonizar. Descubra na internet quais rádios de Campinas estão nesta faixa.
+\item Assuma que  a curva IV de um diodo pode ser aproximada pela expressão $i(t)=a_1 v(t)+a_2 v^2(t)$, onde $a_1$ e $a_2$ são constantes. Calcule a corrente quando a tensão for na forma $v(t)=v_0(1+m(t))\cos[\omega_c t]$. Mostre que existe um termo proporcional à $m(t)$. Pense no  que acontece com os demais termos ao passar pelo capacitor do alto-falante?
+\end{enumerate}
+\subsection*{Material}
+\begin{itemize}
+\item Diodo de  silício.
+\item Diodo de germânio tipo Schotky (Nunca aplicar um sinal do gerador neste diodo, ele é sensível e pode queimar!).
+\item Indutor e capacitor sintonizável ( $30\text{ pf}<C_v<350\text{ pf}$) (Estes componentes já estão montados!).
+\item Resistores: 1k $\Omega$.
+\end{itemize}
+\subsection*{Roteiro}
+\subsubsection*{Caracterização do circuito LC}
+ \begin{wrapfigure}{r}{0.3\textwidth}
+  \vspace{-30pt}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{tuning_lc}
+  \end{center}
+   \vspace{-20pt}
+  \caption{\textbf{Esquema do circuito para caracterizar o filtro LC}. Utilize o gerador de funções no canal 1.}
+  \label{fig:tuning}
+\end{wrapfigure}
+Para caracterizar o filtro iremos utilizar a montagem da Fig. \ref{fig:tuning}. Acople o sinal do gerador no terminal \textbf{verde} do filtro, meça o sinal de saída no terminal \textbf{vermelho}. Estime a frequência de ressonância esperada e depois encontre-a experimentalmente para 4 diferentes posições das placas do capacitor sintonizável. Com a maior capacitância possível, meça 10 pontos das amplitudes $V_{pp1}/V_{pp2}$ na faixa de 50 KHz em torno da ressonância. No relatório estime a largura de banda do filtro.
+
+\subsubsection*{Caracterização da curva IV do diodo}
+
+Em teoria poderíamos medir a curva IV de um diodo simplesmente introduzindo um resistor $R$ em série com o diodo. A queda de tensão  no resistor seria proporcional à corrente, portanto $I=V_R/R$. Para obter $V_D$ basta medirmos a queda de tensão no diodo. Contudo, no  laboratório precisamos conectar o canal 1 do osciloscópio entre os terminais do diodo e o canal 2 entre os terminais de resistor. Como o terra de ambos canais é o mesmo, tal conexão implicaria no resistor (ou o diodo)  em curto-circuito, portanto a queda de tensão medida seria nula. Para resolver este problema de aterramento iremos explorar o transformador de tensão pois neste o enrolamento primário (conectado à rede elétrica) está isolado do secundário (conectado ao circuito), consequentemente podemos impor um ponto de terra entre o resistor e o diodo, como ilustra a Fig. \ref{fig:diodo_iv}\footnote{Note que se fizéssemos esta conexão utilizando o gerador sem o transformador, o resistor conectado ao terminal central do indutor estaria em curto-circuito.}. Como invertemos o sentido que estamos medindo a tensão no resistor, é também necessário \textbf{inverter} o sinal do canal 2 do osciloscópio.
+
+\begin{enumerate}
+\item Monte o circuito da  Fig. \ref{fig:diodo_iv}.
+\item No modo $YT$ do osciloscópio centralize ambas (canais 1 e 2) ondas em $Y=0$ e e grave no seu cartão de memória.
+\item No modo $XY$ salve 2 versões da curva IV, uma em que a curva toda possa ser visualizada (ajuste as escalas horizontais e vertical) e outra em que a origem (próximo de $V_R=0, V_D=0$) esteja ampliada.
+\end{enumerate}
+
+No seu relatório inclua as três curvas. Para as curvas IV indique a escala vertical como corrente em mA e o eixo horizontal em V.
+Extraia destas curvas a corrente de saturação e também a inclinação da curva $dI/dV$, para polarização reversa ($V<0$) e três pontos distintos para polarização direta ($V>0$). Calcule a resistência diferencial nestes pontos $R=(dI/dV)^{-1}$
+ \begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{0pt}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{diodo_iv}
+  \end{center}
+   \vspace{-20pt}
+  \caption{\textbf{Esquema do circuito para caracterizar a curva IV}. Utilize o transformador de $9$ V de saída e $R=1K\Omega$ e um diodo de silício \textbf{(encapsulamento preto!)}.}
+  \label{fig:diodo_iv}
+\end{wrapfigure}
+\subsubsection*{Ouvindo o rádio}
+Chegou finalmente o momento de ouvirmos alguma música (ou notícias). Monte o circuito da Fig. \ref{fig:radio_am} utilizando como detetor o diodo schotky. A motivo de usarmos este diodo, ao invés do diodo de silício,  é que a tensão crítica na qual este diodo deixa passar corrente ($V_0\approx 30$ mV) é muito menor que o diodo de silício ($V_0\approx 700$ mV). Isto o torna ideal para demodular sinais de pequena amplitude, como o que recebemos da antena. Muito cuidado com este diodo pois ele é sensível e não temos muitos sobrando. Descreva no relatório quais rádios você consegui sintonizar. Em Campinas existem duas rádios nesta faixa de frequências, a rádio Central e a rádio Bandeirantes

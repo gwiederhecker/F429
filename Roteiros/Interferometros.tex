@@ -1,0 +1,109 @@
+\section{\label{sec:interferometros}Interferômetros}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics{interferometers}
+\caption{\textbf{Diagrama e exemplos de duas importantes classes de interferômetros ópticos.} (a,d) Esquema de um interferômetro de Michelson (a) e de Fabry-Perot (d). O espelho $EM$ está preso a um parafuso micrométrico e pode ter sua posição controlada com precisão submicrométrica. (b,e) Intensidade óptica observada em um ponto do anteparo quando varia-se a posição do espelho. Em (e), as diferentes curvas representam inteferômetros Fabry-Perot montados com espelhos de diferentes refletivdades $R$.  (c,f,g) Distribuição transversal de intensidade observada  no anteparo quando o interferômetros estão alinhados.}
+\label{fig:interferometro}
+\end{center}
+\end{figure}
+\subsection*{Objetivos}
+Entender os princípios e aplicações de interferômetros ópticos, utilizando-los para medir deslocamentos nanométricos e para desvendar o conteúdo espectral de fontes luminosas. Este roteiro explora os dois tipos de interferômetro mostrados na \fig\ref{fig:interferometro}. 
+\subsection*{Introdução}
+\subsubsection*{Interferência entre ondas}
+ \begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{mod_e_demod}
+  \end{center}
+   \vspace{-20pt}
+  \caption{Princípio de modulação de demodulação de um sinal.}
+\end{wrapfigure}
+A interferência é um fenômeno comumente observado quando trata-se de ondas, o caso eletromagnético (ou óptico) é apenas um exemplo. O fenômeno de inteferência tem como base o princípio da superposição, segundo o qual o campo elétrico (ou magnético) resultante em um dado ponto do espaço é a soma linear entre o campo gerado por todas as fontes existentes no universo\footnote{É bastante intrigante pensar nisto. Imagine a sua posição espacial neste momento, existem fontes de campos eletromagnéticos distribuídos por todo o universo, algumas a bilhões de anos luz de distância, outras tão próximas quanto seu telefone celular, todas contribuindo para o campo elétrico total na sua posição atual.}. Em favor da simplicidade, consideremos o campo total gerado por duas fontes,
+\begin{equation}
+\vec{E}(\vec{r},t)=\vec{E}_1(\vec{r},t)+\vec{E}_2(\vec{r},t)
+\end{equation}
+Para simplicar ainda mais o problema vamos considerar uma situação próxima à dos nossos interferômetros, vamos assumir a os campos $\vec{E}_1,\vec{E}_2$ são ondas planas monocromáticas com frequência $\omega$ propagando-se na direção $\hat{x}$\footnote{A direção $\hat{x}$, conforme indicado na Fig. \ref{fig:interferometro}, é paralela à direção que o espelho móvel ($EM$) se movimenta.}.  
+\begin{eqnarray}
+\vec{E}_1(\vec{r},t)=\vec{e}_1\cos(k_1 x-\omega t+\theta_1)\\
+\vec{E}_2(\vec{r},t)=\vec{e}_2\cos(k_2 x-\omega t+\theta_2)
+\end{eqnarray}
+nas quais $\vec{e}_1,\vec{e}_2$ são vetores unitários ortogonais à direção de propagação que indicam a polarização do campo eletromagnético. As principais consequências da interferência são notadas quando detectamos o campo eletromagnético. A frequência óptica é tão alta, $\omega/2\pi\approx 300\times10^{12}$ Hz que não conseguimos detectar a variação do campo elétrico diretamente, como acontece em frequências baixas na qual pode-se usar um osciloscópio. Nestas frequências, entretanto, a energia dos fótons é tão grande ($>1$ eV) que eles podem ser absorvidos pelas transições eletrônicas de um átomo, molécula ou material semicondutor. No olho humano os fótons são absorvido por moléculas, já nos fotodetectores eles são absorvidos por materiais semicondutores (Si,Ge,GaAs, etc). Portanto o que observamos a olho nu é a intensidade do campo eletromagnético, que é proporcional à,
+\begin{equation}
+I(t)\propto|\vec{E}|^2=\vec{E}\cdot\vec{E}=|\vec{e}_1|^2\cos^2(\phi_1)+|\vec{e}_2|^2\cos^2(\phi_2)+\vec{e}_1\cdot\vec{e}_2\cos(\phi_1)\cos(\phi_2)
+\label{eq:i_inst}
+\end{equation}
+na qual definimos as fases $\phi_{1,2}=k_{1,2}z-\omega_{1,2} t$. Obviamente a intensidade oscila no tempo e no espaço e dão origem às franjas de interferência que observamos. Uma pergunta válida é: Por que o padrão de interferência aparenta ser estático? A resposta está novamente na escala de tempo que nossos detetores respondem à estas variações ultra-rápidas\footnote{Lembrem-se do ventilador, quando olhamos para o mesmo não conseguimos perceber que este está girando, visualizamos apenas a regiões das hélices como se fossem translúcidas, ou seja, observamos uma média temporal; mesmo na ordinária frequência de 60 Hz}. O que percebemos a olho nu é média temporal da intensidade,
+\begin{equation}
+\left<I(t)\right>\equiv\lim_{T\rightarrow\infty}\frac{1}{T}\int_{0}^TI(t)dt 
+\label{eq:i_ave}
+\end{equation}
+Na Eq. \ref{eq:i_ave}, queremos dizer que com limite $T\rightarrow\infty$ que a escala de tempo de resposta do detector (olho ou fotodiodo) é muito maior que o período de todas as funções que aparecem na Eq. \ref{eq:i_inst}. Como demonstramos no apêndice, os períodos que surgem na Eq. \ref{eq:i_inst} são $\tau_1=2\pi/\omega_1$, $\tau_2=2\pi/\omega_2$ e os perídos de batimento $\tau^{(-)}=2\pi/(\omega_1-\omega_2)$ e $\tau^{(+)}=2\pi/(\omega_1+\omega_2)$. Como $\omega_1$ e $\omega_2$ são frequência ópticas, estes perídos são da ordem de $10^{-15}$ s! Portanto temos certeza que $T\gg\tau_1,\tau_2,\tau^{(+)}$
+
+
+\subsubsection*{Antena}
+Quando uma onda eletromagnética com frequência $f_c$ e comprimento de onda $\lambda=c/f_c$  incide sobre uma antena, um dipolo oscilante é induzido na antena. O dipolo induzio gera uma corrente no circuito no qual a antena está conectada. Para que a excitação do dipolo seja eficiente
+na mesma, é importante que o comprimento da antena $L$ seja, aproximadamente,  uma fração inteira do comprimento de onda. No nosso laboratório $L\approx17$ m, aproximadamente, $\lambda/10$ para as frequências de rádio AM. 
+\subsubsection*{Filtro ressonante}
+Como existem diversas estações de rádio AM, é necessário também filtrar o sinal recebido pela antena.  Para tanto utilizaremos um circuito LC em paralelo, como mostra a Fig. \ref{fig:radio_am}, este filtro funciona como um passa-banda, selecione a estação de rádio que desejamos ouvir.
+\subsubsection*{Diodo demodulador ou detector}
+ \begin{wrapfigure}{r}{0.3\textwidth}
+  \vspace{-40pt}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{diode_demodulation}
+  \end{center}
+   \vspace{-20pt}
+  \caption{\textbf{Demodulação por um diodo}}
+\end{wrapfigure}
+
+ Da mesma forma que modulamos a portadora para transmitir o sinal é necessário demodular a onda recebida para podermos escutá-la no alto-falante. Este é o papel do diodo neste circuito, devido a sua curva IV não-linear este componente recupera o sinal de audio que foi modulado na onda portadora.
+ 
+\subsection*{Preparação}
+\begin{enumerate}
+\item Calcule a função de trasferência $H(\omega)$ do filtro LC mostrado na figura \ref{fig:radio_am}. Mostre que a transmitância ($|H|^2$) é dada por  $T(\omega)=\frac{L^2 \omega ^4 C_{in}^2}{\left(L \omega ^2 \left(C_{in}+C_v\right)-1\right){}^2}$. 
+\item Qual é a frequência de ressonância deste filtro? 
+\item Assumindo que o indutor possui $L=62\mu$H e o capacitor variável pode variar entre $30\text{ pf}<C_v<350\text{ pf}$, calcule a faixa de frequências que este filtro poderá sintonizar. Descubra na internet quais rádios de Campinas estão nesta faixa.
+\item Assuma que  a curva IV de um diodo pode ser aproximada pela expressão $i(t)=a_1 v(t)+a_2 v^2(t)$, onde $a_1$ e $a_2$ são constantes. Calcule a corrente quando a tensão for na forma $v(t)=v_0(1+m(t))\cos[\omega_c t]$. Mostre que existe um termo proporcional à $m(t)$. Pense no  que acontece com os demais termos ao passar pelo capacitor do alto-falante?
+\end{enumerate}
+\subsection*{Material}
+\begin{itemize}
+\item Diodo de  silício.
+\item Diodo de germânio tipo Schotky (Nunca aplicar um sinal do gerador neste diodo, ele é sensível e pode queimar!).
+\item Indutor e capacitor sintonizável ( $30\text{ pf}<C_v<350\text{ pf}$) (Estes componentes já estão montados!).
+\item Resistores: 1k $\Omega$.
+\end{itemize}
+\subsection*{Roteiro}
+\subsubsection*{Caracterização do circuito LC}
+ \begin{wrapfigure}{r}{0.3\textwidth}
+  \vspace{-30pt}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{tuning_lc}
+  \end{center}
+   \vspace{-20pt}
+  \caption{\textbf{Esquema do circuito para caracterizar o filtro LC}. Utilize o gerador de funções no canal 1.}
+  \label{fig:tuning}
+\end{wrapfigure}
+Para caracterizar o filtro iremos utilizar a montagem da Fig. \ref{fig:tuning}. Acople o sinal do gerador no terminal \textbf{verde} do filtro, meça o sinal de saída no terminal \textbf{vermelho}. Estime a frequência de ressonância esperada e depois encontre-a experimentalmente para 4 diferentes posições das placas do capacitor sintonizável. Com a maior capacitância possível, meça 10 pontos das amplitudes $V_{pp1}/V_{pp2}$ na faixa de 50 KHz em torno da ressonância. No relatório estime a largura de banda do filtro.
+
+\subsubsection*{Caracterização da curva IV do diodo}
+
+Em teoria poderíamos medir a curva IV de um diodo simplesmente introduzindo um resistor $R$ em série com o diodo. A queda de tensão  no resistor seria proporcional à corrente, portanto $I=V_R/R$. Para obter $V_D$ basta medirmos a queda de tensão no diodo. Contudo, no  laboratório precisamos conectar o canal 1 do osciloscópio entre os terminais do diodo e o canal 2 entre os terminais de resistor. Como o terra de ambos canais é o mesmo, tal conexão implicaria no resistor (ou o diodo)  em curto-circuito, portanto a queda de tensão medida seria nula. Para resolver este problema de aterramento iremos explorar o transformador de tensão pois neste o enrolamento primário (conectado à rede elétrica) está isolado do secundário (conectado ao circuito), consequentemente podemos impor um ponto de terra entre o resistor e o diodo, como ilustra a Fig. \ref{fig:diodo_iv}\footnote{Note que se fizéssemos esta conexão utilizando o gerador sem o transformador, o resistor conectado ao terminal central do indutor estaria em curto-circuito.}. Como invertemos o sentido que estamos medindo a tensão no resistor, é também necessário \textbf{inverter} o sinal do canal 2 do osciloscópio.
+
+\begin{enumerate}
+\item Monte o circuito da  Fig. \ref{fig:diodo_iv}.
+\item No modo $YT$ do osciloscópio centralize ambas (canais 1 e 2) ondas em $Y=0$ e e grave no seu cartão de memória.
+\item No modo $XY$ salve 2 versões da curva IV, uma em que a curva toda possa ser visualizada (ajuste as escalas horizontais e vertical) e outra em que a origem (próximo de $V_R=0, V_D=0$) esteja ampliada.
+\end{enumerate}
+
+No seu relatório inclua as três curvas. Para as curvas IV indique a escala vertical como corrente em mA e o eixo horizontal em V.
+Extraia destas curvas a corrente de saturação e também a inclinação da curva $dI/dV$, para polarização reversa ($V<0$) e três pontos distintos para polarização direta ($V>0$). Calcule a resistência diferencial nestes pontos $R=(dI/dV)^{-1}$
+ \begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{0pt}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{diodo_iv}
+  \end{center}
+   \vspace{-20pt}
+  \caption{\textbf{Esquema do circuito para caracterizar a curva IV}. Utilize o transformador de $9$ V de saída e $R=1K\Omega$ e um diodo de silício \textbf{(encapsulamento preto!)}.}
+  \label{fig:diodo_iv}
+\end{wrapfigure}
+\subsubsection*{Ouvindo o rádio}
+Chegou finalmente o momento de ouvirmos alguma música (ou notícias). Monte o circuito da Fig. \ref{fig:radio_am} utilizando como detetor o diodo schotky. A motivo de usarmos este diodo, ao invés do diodo de silício,  é que a tensão crítica na qual este diodo deixa passar corrente ($V_0\approx 30$ mV) é muito menor que o diodo de silício ($V_0\approx 700$ mV). Isto o torna ideal para demodular sinais de pequena amplitude, como o que recebemos da antena. Muito cuidado com este diodo pois ele é sensível e não temos muitos sobrando. Descreva no relatório quais rádios você consegui sintonizar. Em Campinas existem duas rádios nesta faixa de frequências, a rádio Central e a rádio Bandeirantes

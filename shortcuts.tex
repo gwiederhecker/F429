@@ -1,4 +1,4 @@
-% !TEX root = F429_1s1014.tex
+% !TEX root = F429_1s2014.tex
 %---------------------------------------------------------------------
 %            SHORTCUTS USED IN THE TEXT
 %---------------------------------------------------------------------
@@ -28,34 +28,35 @@
 %			TWO PORT NETWORK
 %------------------------------------------
 \newcommand{\tpn}[2]{
+\begin{center}
+	\begin{circuitikz}[scale=0.8]
+		\node (Xi) at (0.7,0.7) {$V_1$};
+		\node (Xf) at (3.7,0.7) {$V_2$};
+		\draw [semithick,->] (Xi) -- (0.1,0.1);
+		\draw [semithick,->] (Xf) -- (3.1,0.1);
+		\draw to [generic, o-o, l_=$#1$] ++(2,0)
+			(2,0) to [short,o-o] ++(1,0)
+			(2,0) to [generic, o-o, l=$#2$] ++(0,-2)
+			node[ground] {};
+	\end{circuitikz}
+\end{center}
+}
+
+\newcommand{\tpnc}[4]{
+%\begin{center}
 	\begin{circuitikz}[scale=1]
 		\node (Xi) at (0.7,0.7) {$V_1$};
 		\node (Xf) at (3.7,0.7) {$V_2$};
 		\draw [semithick,->] (Xi) -- (0.1,0.1);
 		\draw [semithick,->] (Xf) -- (3.1,0.1);
 		\draw
-			to [generic, o-o, l_=$#1$] ++(2,0)
+			to [#1, o-o, l_=$#2$] ++(2,0)
 			(2,0) to [short,o-o] ++(1,0)
-			(2,0) to [generic, o-o, l=$#2$] ++(0,-2)
-			node[ground] {}
-			;
+			(2,0) to [#3, o-o, l=$#4$] ++(0,-2)
+			node[ground] {};
 	\end{circuitikz}
-}
-
-%\newcommand{\tpn2}[2]{
-%	\begin{circuitikz}[scale=1]
-%		\node (Xi) at (0.7,0.7) {$V_1$};
-%		\node (Xf) at (3.7,0.7) {$V_2$};
-%		\draw [semithick,->] (Xi) -- (0.1,0.1);
-%		\draw [semithick,->] (Xf) -- (3.1,0.1);
-%		\draw
-%			to [generic, o-o, l_=$#1$] ++(2,0)
-%			(2,0) to [short,o-o] ++(1,0)
-%			(2,0) to [generic, o-o, l=$#2$] ++(0,-2)
-%			node[ground] {}
-%			;
-%	\end{circuitikz}
-%%}	
+%\end{center}
+}	
 %------------------------------------------
 %			PHASOR DIAGRAM
 %------------------------------------------
