@@ -1,5 +1,8 @@
 \documentclass[letterpaper,12pt,openright,notitlepage]{report}
 
+\usepackage[skins,theorems]{tcolorbox}
+\tcbset{highlight math style={enhanced,
+  colframe=red,colback=white,arc=0pt,boxrule=1pt}}
 
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
@@ -76,9 +79,7 @@
 %    	pdftitle={Controle e Interação de Fônons e Fótons em Fibras Ópticas de Cristal Fotônico},    		pdfauthor={Gustavo Silva Wiederhecker}     % author}           % color of external links
 %	}         % show bookmarks bar?
 %COLORED BOXES
-\usepackage[skins,theorems]{tcolorbox}
-\tcbset{highlight math style={enhanced,
-  colframe=red,colback=white,arc=0pt,boxrule=1pt}}
+
 %% tamanho do texto e margens
 \setlength{\topmargin}{-15pt} % extra vert. space + at the top of header: 23pt
 \setlength{\oddsidemargin}{0pt} % extra spc added at the left of odd page: 0pt
