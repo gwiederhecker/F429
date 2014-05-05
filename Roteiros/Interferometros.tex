@@ -1,4 +1,7 @@
 \section{\label{sec:interferometros}Interferômetros}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics{interferometers_intro}
@@ -7,7 +10,7 @@
 \end{center}
 \end{figure}
 \subsection*{Objetivos}
-Entender os princípios e aplicações de interferômetros ópticos, utilizando-los para medir deslocamentos nanométricos e para desvendar o conteúdo espectral de fontes luminosas. Este roteiro explora os dois tipos de interferômetro mostrados na \fig \ref{fig:interferometro}. 
+Entender os princípios e aplicações de interferômetros ópticos e utilizá-los tanto para medir deslocamentos nanométricos como para desvendar o conteúdo espectral de uma lâmpada de vapor metálico. Nesta aplicação o interferômetro nos revelará a natureza quântica desta fonte de luz. Em particular exploraremos dois tipos de interferômetro, Michelson e Fabry-Perot, cujos diagramas esquemáticos estão ilustrados na \fig \ref{fig:interferometro}. 
 
 
 %\subsection*{Introdução}
@@ -22,11 +25,11 @@ Entender os princípios e aplicações de interferômetros ópticos, utilizando-los p
 %\end{wrapfigure}
 
 \subsection*{Introdução}
-A interferência é um fenômeno comumente observado quando trata-se de ondas, o caso eletromagnético (ou óptico) é apenas um exemplo. O fenômeno de inteferência tem como base o princípio da superposição, segundo o qual o campo elétrico (ou magnético) resultante em um dado ponto do espaço é a soma linear entre o campo gerado por todas as fontes existentes no universo\footnote{É bastante intrigante pensar nisto. Imagine a sua posição espacial neste momento, existem fontes de campos eletromagnéticos distribuídos por todo o universo, algumas a bilhões de anos luz de distância, outras tão próximas quanto seu telefone celular, todas contribuindo para o campo elétrico total na sua posição atual.}. Em favor da simplicidade, consideremos o campo total gerado por duas fontes em um ponto de observação do anteparo ($\vec{r}$),
+A interferência é um fenômeno comumente observado quando trata-se de ondas, o caso eletromagnético (ou óptico) é apenas um exemplo. A inteferência óptica ocorre quando duas fontes de luz com uma diferença de fase bem definida se sobrepõe no espaço, esta sobreposição define uma padrão de intensidade da luz que oscila no espaço. A explícita dependência destas oscilações com a diferença de fase entre as duas ondas torna a interferência uma poderosa ferramenta para se medir distâncias. Para compreender quantitativamente este fenômeno recorremos ao princípio da superposição, segundo o qual o campo elétrico (ou magnético) resultante em um dado ponto do espaço é a soma linear entre o campo gerado por todas as fontes eletromagnéticas das vizinhanças, algumas bastante distantes. Em favor da simplicidade, consideremos o campo total gerado por duas fontes de luz em um ponto de observação de um anteparo qualquer,
 \begin{equation}
-\vec{E}(\vec{r},t)=\vec{E}_1(\vec{r},t)+\vec{E}_2(\vec{r},t)
+\vec{E}(\vec{r},t)=\vec{E}_1(\vec{r},t)+\vec{E}_2(\vec{r},t),
 \end{equation}
-Note que as duas fontes mencionadas acima podem ser, de fato, duas fontes independentes, como também o reflexo de espelho de uma mesma fonte; geralmente este é o caso nos interferômetros, veja o esquema ilustrado nas \fig\ref{fig:interferometro}(a,d). As principais consequências da interferência são notadas quando detectamos o campo eletromagnético em um dado ponto de observação. A frequência óptica é tão alta, $\omega/2\pi\approx 300\times10^{12}$ Hz que não conseguimos detectar a variação do campo elétrico diretamente, como acontece em frequências baixas na qual pode-se usar um osciloscópio. Nestas frequências, entretanto, a energia dos fótons é tão grande ($>1$ eV) que eles podem ser absorvidos pelas transições eletrônicas de um átomo, molécula ou material semicondutor. No olho humano os fótons são absorvidos por moléculas, já nos fotodetectores eles são absorvidos por materiais semicondutores (Si,Ge,GaAs, etc). Portanto o que observamos a olho nu é a média temporal da intensidade do campo eletromagnético\footnote{Nesta notação $E_1$ e $E_2$ representam a amplitude complexa dos campos eletromagnéticos, análoga à representação de fasores.},
+sendo que ($\vec{r}$) denota a posição no anteparo. Note que as duas fontes mencionadas acima podem ser duas fontes independentes, ou a reflexão especular de uma mesma fonte; geralmente este é o caso nos interferômetros, veja o esquema ilustrado nas \fig\ref{fig:interferometro}(a,d). As principais consequências da interferência são notadas quando detectamos o campo eletromagnético em um dado ponto de observação. A frequência óptica é tão alta, $\omega/2\pi\approx 300\times10^{12}$ Hz que não conseguimos detectar a variação do campo elétrico diretamente, como acontece em frequências baixas na qual pode-se usar um osciloscópio. Nestas frequências, entretanto, a energia dos fótons é tão grande ($>1$ eV) que eles podem ser absorvidos pelas transições eletrônicas de um átomo, molécula ou material semicondutor. No olho humano os fótons são absorvidos por moléculas, já nos fotodetectores eles são absorvidos por materiais semicondutores (Si,Ge,GaAs, etc). Portanto o que observamos a olho nu é a média temporal da intensidade do campo eletromagnético\footnote{Nesta notação $E_1$ e $E_2$ representam a amplitude complexa dos campos eletromagnéticos, análoga à representação de fasores. },
 \begin{equation}
 \left<I\right>=\propto|\vec{E}|^2=\vec{E}\cdot\vec{E}^*=|\vec{E}_1(\vec{r},t)|^2+|\vec{E}_2(\vec{r},t)|^2+\underbrace{2\Re\left({\vec{E}_1(\vec{r},t)\cdot\vec{E}^{*}_2(\vec{r},t)}\right)}_{\text{termo de interferência}},
 \label{eq:i_inst}
@@ -50,22 +53,27 @@ Inteferômetros são instrumentos que exploram este fenômeno ondulatório para dive
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics{interferometers_michelson}
-\caption{\textbf{Esquema de reflexões e transmitância de um Fabry-Perot.}  (a) Esquema de múltiplas reflexões em um Fabry-Perot. O deslocamento vertical dos feixes tem o intuito de simplificar os campos que contribuem para reflexão ($E_r$) dos campos que contribuem para a transmissão ($E_t$). (b) Intensidade óptica observada em um ponto do anteparo quando varia-se a posição do espelho. Em (e), as diferentes curvas representam inteferômetros Fabry-Perot montados com espelhos de diferentes refletivdades $R=(20,40,70)\%$.}
-\label{fig:interferometro_fp}
+\caption{\textbf{Transmitânica de um interferômetro de Michelson com luz monocromática.}  (a) Intensidade óptica observada em um ponto do anteparo quando varia-se a posição do espelho. (b)  Distribuição transversal de intensidade observada  no anteparo quando o interferômetros estão alinhados.}
+\label{fig:interferometro_mc}
 \end{center}
 \end{figure}
-No interferômetro de Michelson\footnote{Inventado por Albert Abraham Michelson e utilizado no famoso experimento de Michelson-Morley para testar a existência do Éter.}, ilustrado na \fig\ref{fig:interferometro}(a), o feixe de luz é divido e recombinado utilizando um único divisor de feixes. Portanto as duas fontes de luz que causam a interferências são os reflexos da fonte de luz nos espelhos $EM$ e $EF$. O campo elétrico no ponto de observação terá duas contribuições,
+No interferômetro de Michelson\footnote{Inventado por Albert Abraham Michelson e utilizado no famoso experimento de Michelson-Morley para testar a existência do Éter. Visite a página do grupo de detecção de ondas gravitacionais da universidade de Birmingham\url{http://www.gwoptics.org/processing/michelson01/} para ter uma experiência interativa com o inteferômetro de Michelson.}, ilustrado na \fig\ref{fig:interferometro}(a), o feixe de luz é divido e recombinado utilizando um único divisor de feixes. Portanto as duas fontes de luz que causam a interferências são os reflexos da fonte de luz nos espelhos $EM$ e $EF$. O campo elétrico no ponto de observação terá duas contribuições,
 \begin{eqnarray}
 \vec{E}_1(\vec{r},t)=E_1\exp[i(k x_1-\omega t)]  \vec{e}_1\\
 \vec{E}_2(\vec{r},t)=E_2\exp[i(k x_2-\omega t)]   \vec{e}_2
 \end{eqnarray}
-Os termos ao final das equações representam as amplitudes ($E_{1,2}$) e as polarizações dos campos ($\vec{e_{1,2}}$). No nosso experimento é uma excelente aproximação assumir que as polarizações são idênticas\footnote{Neste experimento não se utiliza nenhum componente capaz de "girar" a polarização dos campos. Como ambos feixes originam-se de uma única fonte é razoável assumir que possuem a mesma polarização.}, $\vec{e_{1,2}}=\vec{e}$. O divisor de feixe ($DF$) utilizado também é simétrico (50\%) e portanto $E_{1,2}=E/\sqrt(2)$, sendo que $E$ é a amplitude do campo eletromagnético da fonte. Os argumentos da exponencial complexa são os mais importantes no nosso estudo e representam a fase da onda eletromagnética; $\omega=2 \pi/T$ é a frequência temporal da onda, sendo $T$ o período temporal da onda. Analogamente, $k=2 \pi/\lambda$ é denominado o número de onda e representa a frequência espacial da onda, sendo $\lambda$ o período espacial da onda (ou comprimento de onda). Os termos $x_1$ e $x_2$ levam em consideração as diferentes distâncias percorridas pelo feixe de luz após incidir no divisor de feixe ($DF$), portanto, $x_1=2l_1$ e $x_2=2l_2$, conforme indica a figura \fig\ref{fig:interferometro}(a).
+Os termos ao final das equações representam as amplitudes ($E_{1,2}$) e as polarizações dos campos ($\vec{e_{1,2}}$). No nosso experimento é uma excelente aproximação assumir que as polarizações são idênticas\footnote{Neste experimento não se utiliza nenhum componente capaz de "girar" a polarização dos campos. Como ambos feixes originam-se de uma única fonte é razoável assumir que possuem a mesma polarização.}, $\vec{e_{1,2}}=\vec{e}$. O divisor de feixe ($DF$) utilizado também é simétrico (50\%) e portanto $E_{1,2}=E_0/\sqrt(2)$, sendo que $E_0$ é a amplitude do campo eletromagnético da fonte. Os argumentos da exponencial complexa são os mais importantes no nosso estudo e representam a fase da onda eletromagnética; $\omega=2 \pi/T$ é a frequência temporal da onda, sendo $T$ o período temporal da onda. Analogamente, $k=2 \pi/\lambda$ é denominado o número de onda e representa a frequência espacial da onda, sendo $\lambda$ o período espacial da onda (ou comprimento de onda). Os termos $x_1$ e $x_2$ levam em consideração as diferentes distâncias percorridas pelo feixe de luz após incidir no divisor de feixe ($DF$), portanto, $x_1=2l_1$ e $x_2=2l_2$, conforme indica a figura \fig\ref{fig:interferometro}(a).
 A intensidade no anteparo, analogamente à equação \ref{eq:i_inst}, será dada por
 \begin{equation}
-I(x)\propto\vec{E}\cdot\vec{E}^*=|E|^2(1+\Re\left(\exp(i 2 k \delta x)\right)=|E|^2(1+\cos(2 k \delta x)),
+I(x)\propto\vec{E}\cdot\vec{E}^*=|E|^2(1+\Re\left(\exp(i 2 k \delta x)\right),
 \label{eq:i_inst_michelson}
 \end{equation}
-sendo que $\delta x=(l_1-l_2)$ é a diferença de distância entre os dois caminhos ortogonais do interferômetro. O comportamento da função $1+\cos(2 k \delta x)$ é mostrado na \fig\ref{fig:interferometro}. \textbf{Note que o período desta função será $\Lambda=2\pi/(2k)=\lambda/2$, conforme indicado na figura, isto significa que ao deslocar o espelho móvel por uma distância de $\lambda/2$, o padrão de interferência se deslocará por uma franja completa. Se utilizarmos um laser vermelho ($\lambda\approx 630$ nm), seremos capazes de identificar com precisão deslocamentos da ordem de 300 nm!}. Outro aspecto importante é que esta variação espacial da intensidade será observada para qualquer ponto transversal do anteparo (veja \fig\ref{fig:interferometro}(b)), quando variarmos a a posição do espelho móvel ($EM$). Note que a variação $\delta x$ não tem relação com a distribuição transversal do padrão de interferência, mostrado na figura \ref{fig:interferometro}(c), este perfil anular está relacionado à simetria cilíndrica das lentes utilizadas neste experimento.
+sendo que $\delta x=(l_1-l_2)$ é a diferença de distância entre os dois caminhos ortogonais do interferômetro. A Eq. \ref{eq:i_inst_michelson} define a transmitância do interferômetro de Michelson ($T_M$) e pode ser escrita na forma,
+\begin{equation}
+\tcbhighmath{\frac{\left<I\right>}{I_0}\equiv T_M=1+\cos(2 k \delta x),}
+\label{eq:transfer_function_MC}
+\end{equation}
+sendo que $I_0\propto E_0^2$ é a intensidade do feixe de entrada. O comportamento da função $1+\cos(2 k \delta x)$ é mostrado na \fig\ref{fig:interferometro_mc}. \textbf{Note que o período desta função será $\Lambda=2\pi/(2k)=\lambda/2$, isto significa que ao deslocar o espelho móvel por uma distância de $\lambda/2$, o padrão de interferência se deslocará por uma franja completa. Se utilizarmos um laser vermelho ($\lambda\approx 633$ nm), seremos capazes de identificar com precisão deslocamentos da ordem de $\delta x\approx315\times 10^{-9}\text{ m}$ !} Outro aspecto importante é que esta variação espacial da intensidade, como função da posição do $EM$, será observada para qualquer ponto transversal do anteparo (veja \fig\ref{fig:interferometro_mc}(b)). Note que a oscilação transversal do padrão de interferência, mostrado na figura \ref{fig:interferometro_mc}(b), está relacionado à simetria cilíndrica das lentes utilizadas neste experimento e só pode ser observado no formato ilustrado quando o interferômetro está perfeitamente alinhado.
 
  
 %Para simplicar ainda mais o problema vamos considerar uma situação próxima à dos nossos interferômetros, vamos assumir a os campos $\vec{E}_1,\vec{E}_2$ são ondas planas monocromáticas com frequência $\omega$ propagando-se na direção $\hat{x}$\footnote{A direção $\hat{x}$, conforme indicado na Fig. \ref{fig:interferometro}, é paralela à direção que o espelho móvel ($EM$) se movimenta.}.  
@@ -89,7 +97,7 @@ No interferômetro de Fabry-Perot, dois espelhos parcialmente refletores  são dis
 \end{center}
 \end{figure}
 
-É fácil deduzir qual será o padrão de interferência no FP, basta calcularmos os múltiplos campos que serão refletidos entre os espelhos e contribuirão para o campo total transmitido. Para simplificar consideremos o caso de incidência normal e espelhos idênticos, conforme ilustrado na \fig\ref{fig:interferometro_fp}(a). Denominamos o coeficiente de transmissão dos campos por $t$ e o de reflexão por $r$. A energia trasmitida é dada por $T=|t|^2$ e a refletida por $R=|r|^2$, assumimos que não existem perdas entre nos espelhos ou entre eles, de forma que a energia total é conservada, i.e., $T^2+R^2=1$. A ausência de perdas entre os espelhos implica que o efeito da propagação entre os espelhos é simplesmente introduzir uma fase adicional ao campo ($e^i\phi$) sendo que $\phi=kl$ com $k=2\pi/\lambda$ e $l$ representando a distância entre os espelhos. Portanto os sucessivos campos transmitidos, indicados na \fig\ref{fig:interferometro_fp} são dados por,
+É fácil deduzir qual será o padrão de interferência no FP, basta calcularmos os múltiplos campos que serão refletidos entre os espelhos e contribuirão para o campo total transmitido. Para simplificar consideremos o caso de incidência normal e espelhos idênticos, conforme ilustrado na \fig\ref{fig:interferometro_fp}(a). Denominamos o coeficiente de transmissão dos campos por $t$ e o de reflexão por $r$. A energia trasmitida é dada por $T=|t|^2$ e a refletida por $R=|r|^2$, assumimos que não existem perdas entre nos espelhos ou entre eles, de forma que a energia total é conservada, i.e., $T^2+R^2=1$. A ausência de perdas entre os espelhos implica que o efeito da propagação entre os espelhos é simplesmente introduzir uma fase adicional ao campo ($e^{i\phi}$) sendo que $\phi=kl$ com $k=2\pi/\lambda$ e $l$ representando a distância entre os espelhos. Portanto os sucessivos campos transmitidos, indicados na \fig\ref{fig:interferometro_fp} são dados por,
 \begin{center}
 \begin{tabular}{c c }
 $m$ & $E_{t_m}$  \\
@@ -120,62 +128,118 @@ n & $t^2r^{2n}\exp i(2n+1)\phi$  \\
 
 O campo eletromagnético total será dado pela soma,
 \begin{equation}
-E_t=\sum_{m=0}^{\infty} E_{t_m}=t^2\exp i\phi \sum_{m=0}^{\infty}\left(r^2 e^{i2\phi}\right)^{m}=\frac{t^2}{r^2e^{i2\phi}-1}.
+E_t=\sum_{m=0}^{\infty} E_{t_m}=E_0 t^2\exp i\phi \sum_{m=0}^{\infty}\left(r^2 e^{i2\phi}\right)^{m}=\frac{t^2}{r^2e^{i\Delta}-1},
 \label{eq:fp_sum}
 \end{equation}
-Na última igualdade usamos que $r<1$ e portanto a soma é uma série geométrica convergente de razão ($r^2e^{i2\phi}<1$). A intensidade da luz transmitida pelo par de espelhos é simplesmente 
+sendo que definimos $\Delta\equiv2\phi=2kl$, representando a diferença de fase acumulada por cada feixe de luz ao dar uma volta completa na cavidade. Na última igualdade usamos que $|r|<1$ e portanto a soma é uma série geométrica convergente de razão ($r^2e^{i\Delta}<1$). A intensidade da luz transmitida pelo par de espelhos é simplesmente 
 \begin{equation}
-\left<I\right>\propto|E_t|^2=\frac{T^2}{1+R^2-2R \cos(2\phi)}=\frac{(1-R)^2}{1+R^2-2R \cos(2\phi)}=\frac{1}{1+F \sin^2(\phi)}
+\left<I\right>\propto|E_t|^2=E_0^2\frac{T^2}{1+R^2-2R \cos(\Delta)}=E_0^2\frac{(1-R)^2}{1+R^2-2R \cos(\Delta)}.
+\label{eq:transfer_function_FP}
 \end{equation}
-na qual definimos a importante quantidade denominada \textit{finesse}, $F\equiv4R/(1-R)^2$. A razão $F/\pi$ quantifica, aproximadamente, quantas vezes o campo percorreu a distância entre os espelhos. Na figura \ref{fig:interferometro_fp}(b) mostramos o comportamento da transmitância do FP para diferentes valores da refletância dos espelhos. Na figura \ref{fig:interferometro_fp}(c) mostramos como a \textit{finesse} aumenta quando varia-se a refletividade dos espelhos.
+A equação \ref{eq:transfer_function_FP} pode ser escrita de uma forma mais simplificada em termos da importante  quantidade denominada \textit{finesse}, $F\equiv4R/(1-R)^2$. Dividindo a Eq. \ref{eq:transfer_function_FP} por $(1-R)^2$ e usando relações trigonométricas obtemos a seguinte expressão,
+\begin{equation}
+\tcbhighmath{\frac{\left<I\right>}{I_0}\equiv T_{FP}=\frac{1}{1+F \sin^2(\frac{\Delta}{2})},}
+\label{eq:transfer_function_FP_simple}
+\end{equation}
+sendo que $I_0\propto E_0^2$ é a intensidade do feixe de entrada e $T$ é a transmitância do interferômetro. A razão $F/\pi$ quantifica, aproximadamente, quantas voltas o feixe de luz percorreu na cavidade. Na figura \ref{fig:interferometro_fp}(b) mostramos o comportamento da transmitância do FP, dado pela Eq. \ref{eq:transfer_function_FP_simple}, para diferentes valores da refletância dos espelhos. Na figura \ref{fig:interferometro_fp}(c) mostramos como a \textit{finesse} aumenta quando varia-se a refletividade dos espelhos, note que para espelhos altamente refletores a luz pode dar  milhares de voltas na cavidade\footnote{No detector de ondas gravitacionais (LIGO), }. \textbf{Note que a função $T_{FP}$ será máxima sempre que $\Delta=2kl=2m\pi$ ($m \in\mathcal{Z}$), ou seja, neste aspecto o Fabry-Perot é idêntico ao Michelson, notaremos um máximo de interferência sempre que espelho móvel deslocar-se por uma distância de $\lambda/2$.}
  
 \subsection*{Preparação}
 \begin{enumerate}
-\item Calcule a função de trasferência $H(\omega)$ do filtro LC mostrado na figura \ref{fig:radio_am}. Mostre que a transmitância ($|H|^2$) é dada por  $T(\omega)=\frac{L^2 \omega ^4 C_{in}^2}{\left(L \omega ^2 \left(C_{in}+C_v\right)-1\right){}^2}$. 
-\item Qual é a frequência de ressonância deste filtro? 
-\item Assumindo que o indutor possui $L=62\mu$H e o capacitor variável pode variar entre $30\text{ pf}<C_v<350\text{ pf}$, calcule a faixa de frequências que este filtro poderá sintonizar. Descubra na internet quais rádios de Campinas estão nesta faixa.
-\item Assuma que  a curva IV de um diodo pode ser aproximada pela expressão $i(t)=a_1 v(t)+a_2 v^2(t)$, onde $a_1$ e $a_2$ são constantes. Calcule a corrente quando a tensão for na forma $v(t)=v_0(1+m(t))\cos[\omega_c t]$. Mostre que existe um termo proporcional à $m(t)$. Pense no  que acontece com os demais termos ao passar pelo capacitor do alto-falante?
+\item Assuma $\lambda=633$ nm e grafique simultaneamente as transmitâncias do interferômetros, dadas pelas Eqs. \ref{eq:i_inst_michelson} e \ref{eq:transfer_function_FP_simple} como função da posição do espelho. Reflita sobre as semelhanças e diferenças, altere os parâmetros envolvidos. Qual deles pode medir deslocamento com mais precisão, em quais condições? (Pense sobre a derivada $dT/d(\delta x)$)
 \end{enumerate}
 \subsection*{Material}
 \begin{itemize}
-\item Diodo de  silício.
-\item Diodo de germânio tipo Schotky (Nunca aplicar um sinal do gerador neste diodo, ele é sensível e pode queimar!).
-\item Indutor e capacitor sintonizável ( $30\text{ pf}<C_v<350\text{ pf}$) (Estes componentes já estão montados!).
-\item Resistores: 1k $\Omega$.
+\item Lasers de He-Ne ($\lambda_\text{HeNe}=632,82\pm0,05$), Lâmpada de sódio.
+\item Lâmina difusora de luz.
+\item Objetivas de microscópio para expansão do feixe do laser.
 \end{itemize}
 \subsection*{Roteiro}
-\subsubsection*{Caracterização do circuito LC}
- \begin{wrapfigure}{r}{0.3\textwidth}
-  \vspace{-30pt}
-  \begin{center}
-    \includegraphics[width=0.3\textwidth]{tuning_lc}
-  \end{center}
-   \vspace{-20pt}
-  \caption{\textbf{Esquema do circuito para caracterizar o filtro LC}. Utilize o gerador de funções no canal 1.}
-  \label{fig:tuning}
-\end{wrapfigure}
-Para caracterizar o filtro iremos utilizar a montagem da Fig. \ref{fig:tuning}. Acople o sinal do gerador no terminal \textbf{verde} do filtro, meça o sinal de saída no terminal \textbf{vermelho}. Estime a frequência de ressonância esperada e depois encontre-a experimentalmente para 4 diferentes posições das placas do capacitor sintonizável. Com a maior capacitância possível, meça 10 pontos das amplitudes $V_{pp1}/V_{pp2}$ na faixa de 50 KHz em torno da ressonância. No relatório estime a largura de banda do filtro.
-
-\subsubsection*{Caracterização da curva IV do diodo}
-
-Em teoria poderíamos medir a curva IV de um diodo simplesmente introduzindo um resistor $R$ em série com o diodo. A queda de tensão  no resistor seria proporcional à corrente, portanto $I=V_R/R$. Para obter $V_D$ basta medirmos a queda de tensão no diodo. Contudo, no  laboratório precisamos conectar o canal 1 do osciloscópio entre os terminais do diodo e o canal 2 entre os terminais de resistor. Como o terra de ambos canais é o mesmo, tal conexão implicaria no resistor (ou o diodo)  em curto-circuito, portanto a queda de tensão medida seria nula. Para resolver este problema de aterramento iremos explorar o transformador de tensão pois neste o enrolamento primário (conectado à rede elétrica) está isolado do secundário (conectado ao circuito), consequentemente podemos impor um ponto de terra entre o resistor e o diodo, como ilustra a Fig. \ref{fig:diodo_iv}\footnote{Note que se fizéssemos esta conexão utilizando o gerador sem o transformador, o resistor conectado ao terminal central do indutor estaria em curto-circuito.}. Como invertemos o sentido que estamos medindo a tensão no resistor, é também necessário \textbf{inverter} o sinal do canal 2 do osciloscópio.
-
+\textbf{\textcolor{red}{Antes de prosseguir é importante ressaltar aspectos de segurança pessoal, assim como dos equipamentos utilizados.}} \textcolor{red}{Tome sempre os cuidados abaixo durante o experimento.
+\begin{itemize}
+\item Nunca aponte o feixe de luz laser na direção de um colega.
+\item Nunca olhe diretamente para a luz do laser ou qualquer reflexão da mesma.
+\item Todos os membro do grupo devem tirar relógios, anéis e pulseiras que possam refletir luz.
+\item Manuseie com muito cuidado os componentes, lâmpadas, lasers, prismas, etc. Em muitos casos eles custam vários milhares de reais e merecem ser tratados com zelo.
+\end{itemize}
+}
+Em resumo este experimento será desenvolvido em quatro etapas que são detalhadas abaixo,
 \begin{enumerate}
-\item Monte o circuito da  Fig. \ref{fig:diodo_iv}.
-\item No modo $YT$ do osciloscópio centralize ambas (canais 1 e 2) ondas em $Y=0$ e e grave no seu cartão de memória.
-\item No modo $XY$ salve 2 versões da curva IV, uma em que a curva toda possa ser visualizada (ajuste as escalas horizontais e vertical) e outra em que a origem (próximo de $V_R=0, V_D=0$) esteja ampliada.
+\item Alinhamento dos interferômetros
+\item Medidas de deslocamento e calibração
+\item Medida do comprimento de onda de uma lâmpada de Sódio (Na)
+\item Medida do dubleto da lâmpada de Na.
 \end{enumerate}
 
-No seu relatório inclua as três curvas. Para as curvas IV indique a escala vertical como corrente em mA e o eixo horizontal em V.
-Extraia destas curvas a corrente de saturação e também a inclinação da curva $dI/dV$, para polarização reversa ($V<0$) e três pontos distintos para polarização direta ($V>0$). Calcule a resistência diferencial nestes pontos $R=(dI/dV)^{-1}$
- \begin{wrapfigure}{r}{0.5\textwidth}
-  \vspace{0pt}
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{diodo_iv}
-  \end{center}
-   \vspace{-20pt}
-  \caption{\textbf{Esquema do circuito para caracterizar a curva IV}. Utilize o transformador de $9$ V de saída e $R=1K\Omega$ e um diodo de silício \textbf{(encapsulamento preto!)}.}
-  \label{fig:diodo_iv}
-\end{wrapfigure}
-\subsubsection*{Ouvindo o rádio}
-Chegou finalmente o momento de ouvirmos alguma música (ou notícias). Monte o circuito da Fig. \ref{fig:radio_am} utilizando como detetor o diodo schotky. A motivo de usarmos este diodo, ao invés do diodo de silício,  é que a tensão crítica na qual este diodo deixa passar corrente ($V_0\approx 30$ mV) é muito menor que o diodo de silício ($V_0\approx 700$ mV). Isto o torna ideal para demodular sinais de pequena amplitude, como o que recebemos da antena. Muito cuidado com este diodo pois ele é sensível e não temos muitos sobrando. Descreva no relatório quais rádios você consegui sintonizar. Em Campinas existem duas rádios nesta faixa de frequências, a rádio Central e a rádio Bandeirantes
+\subsubsection*{Alinhamento dos interferômetros}
+Para que os belos aspectos do interferência óptica possam ser apreciados é necessário que o interferômetro seja alinhado. Entende-se por alinhamento a condição na qual os feixes ópticos, refletidos nos diferentes caminhos do interferômetro, se sobrepõem no anteparo. A maneira mais rápida de obter esta condição é incidir o laser diretamente (sem nenhuma lente ao longo do caminho) sobre o inteferômetro e observar as imagens formadas na parede. Tipicamente observa-se diversas imagens e é preciso entender a origem de cada uma delas antes de prosseguir com o alinhamento. Cada inteferômetro, Michelson, ou Fabry-Perot, possui suas peculiaridades, abaixo destacamos pontos relevantes de cada um deles,
+\paragraph{Michelson}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics{Michelson_alinhamento}
+\caption{\textbf{Sequência de alinhamento do Michelson.} (a) Bloqueie o feixe que atinge o espelho fixo, gire e reposicione a base do interferômetro de forma a ter o feixe do laser ortogonal ao feixe que sai em direção ao anteparo. Preste atenção à polia do motor que deve ficar tensionada ao final desta etapa. (b) Bloqueie o feixe que atinge o espelho fixo, ajuste os parafusos laterais do espelho fixo e faça com que o feixe refletido coincida com feixe refletido pelo espelho móvel (desbloqueie o feixe para verificar que ambos estão se sobrepondo). Note que a lâmina compensadora (LC) sempre produz uma reflexão espúria do feixe que retorna do espelho fixo.}
+\label{fig:interference_mc}
+\end{center}
+\end{figure}
+
+\begin{enumerate}
+\item  Posicione o laser na horizontal e oriente seu feixe paralelamente às laterais da mesa de trabalho, garante que a altura do feixe é compatível com abertura de entrada do interferômetro
+\item Ajuste a base do interferômetro, conforme a \fig\ref{fig:alinhamento_mc}(a).
+\item Ajuste os parafusos laterais de espelho fixo, , conforme a \fig\ref{fig:alinhamento_mc}(b).
+\item Verifique que os feixes oriundos dos dois espelhos, $EM$ e $EF$, incidem sobre o mesmo ponto no anteparo. Neste momento já é possível notar que ocorre interferência no ponto de sobreposição.
+\item Adicione a lente que irá expandir o feixe e permitir a melhor visualização da interferência, conforme a \fig\ref{fig:alinhamento_mc}(c).
+\item Faça um ajuste fino nos parafusos laterais do espelho fixo e otimize a figura de interferência. Você deverá visualizar figuras de interferência similares às mostradas na figura \ref{fig:interference_mc}. A condição mostrada na \fig\ref{fig:interference_mc}(a) indica que o alinhamento está perfeito.
+\end{enumerate}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics{interference_mc}
+\caption{\textbf{Figuras típicas observadas no interferômetro de Michelson.} (a) Alinhamento colinear perfeito (b) Espelho fixo ligeiramente desalinhada. (c) Espelho fixo com desalinhamento considerável. Note que qualquer uma das condições acima é suficiente para realizar o experimento, o importante é que seja possível contar a alternância das franjas à medida que o espelho móvel se desloca}
+\label{fig:alinhamento_mc}
+\end{center}
+\end{figure}
+
+
+\subsubsection*{Medida de deslocamento do espelho (Michelson \& Fabry-Perot)}
+Nesta etapa o objetivo é usar o interferômetro para determinar o deslocamento do espelho móvel. Isto será possível pois conhecemos com precisão  o comprimento de onda do laser de HeNe~($\lambda_\text{HeNe}=632,82\pm0,05$ nm). Usaremos as franjas observadas no anteparo como nossa régua. Das equações \ref{eq:transfer_function_MC}  e \ref{eq:transfer_function_FP_simple} e seus respectivos gráficos, mostrados nas figuras \ref{fig:interferometro_mc} e \ref{fig:interferometro_fp}, sabemos que o deslocamento do espelho ($ x_e$) pode ser contado em termos do número de franjas deslocadas ($N$), ou seja,
+\begin{equation}
+\tcbhighmath{x_e=N\frac{\lambda_\text{HeNe}}{2}.}
+\label{eq:delta_x_esp}
+\end{equation}
+Se considerarmos o erro na contagem de franjas de $\delta N=1/2$, concluímos que a precisão absoluta da nossa medida será $\delta x_e\approx 160$ nm, um número dificilmente tangível com outras técnicas de medida. Podemos utilizar esta medida associada à obtida da escala do parafuso micrométrico que aciona o espelho móvel para determinar o fator de redução da alavanca responsável por suavizar o movimento do espelho móvel $EM$. Se denotarmos este fator por $R$, podemos escrever $x_e=R\ x_p$ sendo que $x_p$ é o deslocamento do parafuso micrométrico. Utilizando a Eq. \ref{eq:delta_x_esp} obtemos a relação desejada,
+\begin{equation}
+\tcbhighmath{R= N\frac{\lambda_\text{HeNe}}{2 x_p}.}
+\label{eq:reduction}
+\end{equation}
+É importante medir $R$ com alta precisão pois as demais medidas do experimento dependerão de $R$, o limite último para nossa medida é dado pela precisão do comprimento de onda do laser ($\delta\lambda/\lambda\approx0,008\%$). A precisão absoluta do parafuso micrométrico é $\delta {x_p}\approx 5\mu$m, portanto se desejarmos um erro relativo comparável ao $\delta\lambda$ do laser, deveríamos deslocar o parafuso por $x_p\approx \delta {x_p}/0.008\%\approx 62,5$ mm. Como o valor de $R\approx0,2$, a Eq. \ref{eq:reduction} implicaria que tal precisão requer a contagem de $N\approx 4\times10^4$ franjas. Este número é impraticável com a técnica de contagem manual utilizada neste experimento e teremos que nos satisfazer com uma precisão menor. Um número de franjas razoável de se contar é $N\approx 500$, implicando em uma precisão relativa $\delta N/N\approx 0,1\%$ e $x_p=N\lambda/(2R) \approx 790\mu$m, portanto a precisão relativa no deslocamento do espelho será $\delta x_p/x_p\approx 1,3\%$. Note que $\delta x_p/x_p$ passa ser o fator dominante no erro da medida de $R$, \textbf{portanto é importante ler a escala do parafuso micrométrico com bastante atenção}.
+
+\subsubsection*{Determinando o comprimento de onda de uma fonte desconhecida (Michelson \& Fabry-Perot)}
+Nesta etapa o objetivo é usar o interferômetro calibrado para determinar o comprimento de onda de uma lâmpada de Sódio (Na). Neste caso escrevemos  a Eq. \ref{eq:reduction} na forma,
+\begin{equation}
+\tcbhighmath{\lambda_\text{Na}=\frac{2 R x_p}{N}}.
+\label{eq:lambda_Na}
+\end{equation}
+O procedimento de medida é o mesmo utilizado para calibrar o interferômetro, entretanto utilizaremos a lâmpada de Na como fonte de luz. Novamente é importante questionar a precisão da medida. Se conhecemos $R$ com precisão de $\delta R/R\approx1,3\%$, queremos garantir que mediremos um número suficiente de franjas para não aumentar significativamente esta imprecisão, se medirmos o mesmo número de franjas medidos durante a calibração, a precisão na leitura do parafuso será também $\delta x_p/x_p\approx 1,3\%$ e portanto podemos esperar uma precisão de $\delta\lambda_\text{Na}/\lambda_\text{Na}\approx 3\%$. Dois cuidados devem ser tomados durante esta medida,
+\begin{itemize}
+\item Coloque a lâmina difusora entre a lâmpada e a abertura de entrada do interferômetro, repare na diferença e reflita sobre o papel da lâmina difusora.
+\item Procure uma posição do parafuso na qual a visibilidade seja boa, estas acontecem imediatamente após uma região de baixa visibilidade (exploraremos a seguir a causa desta oscilação de visibilidade) 
+\end{itemize}
+
+\subsubsection*{Determinando a separação de frequência do dubleto do Sódio (Michelson \& Fabry-Perot)}
+
+The well known bright doublet which is responsible for the bright yellow light from a sodium lamp may be used to demonstrate several of the influences which cause splitting of the emission lines of atomic spectra. The transition which gives rise to the doublet is from the 3p to the 3s level, levels which would be the same in the hydrogen atom. The fact that the 3s (orbital quantum number = 0) is lower than the 3p (l=1) is a good example of the dependence of atomic energy levels on angular momentum. The 3s electron penetrates the 1s shell more and is less effectively shielded than the 3p electron, so the 3s level is lower (more tightly bound). The fact that there is a doublet shows the smaller dependence of the atomic energy levels on the total angular momentum . The 3p level is split into states with total angular momentum j=3/2 and j=1/2 by the magnetic energy of the electron spin in the presence of the internal magnetic field caused by the orbital motion. This effect is called the spin-orbit effect. In the presence of an additional externally applied magnetic field, these levels are further split by the magnetic interaction, showing dependence of the energies on the z-component of the total angular momentum. This splitting gives the Zeeman effect for sodium.
+
+The magnitude of the spin-orbit interaction has the form mzB = mBSzLz. In the case of the sodium doublet, the difference in energy for the 3p3/2 and 3p1/2 comes from a change of 1 unit in the spin orientation with the orbital part presumed to be the same. The change in energy is of the form
+
+DE = mBgB = 0.0021 eV
+
+where mB is the Bohr magneton and g is the electron spin g-factor with value very close to 2. This gives an estimate of the internal magnetic field needed to produce the observed splitting:
+
+mBgB = (5.79 x 10-5 eV/T)2B = 0.0021 eV
+
+B = 18 Tesla
+
+This is a very large magnetic field by laboratory standards. Large magnets with dimensions over a meter, used for NMR and ESR experiments, have magnetic fields on the order of a Tesla.
+
+
