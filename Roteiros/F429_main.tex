@@ -11,6 +11,10 @@
 \usepackage{subfigure}
 \subfigcapmargin = .5cm
 
+%\usepackage{biblatex}
+%\addbibresource{bibliografia_F429.bib}
+\usepackage[sectionbib]{chapterbib}
+
 \usepackage{fancyref}
 \usepackage{textcomp}      % \texttrademark
 \usepackage{url}
@@ -24,7 +28,7 @@
 %Bold vectors and tensors
 \usepackage[bold]{hhtensor}
 %%\usepackage[round]{natbib}  % citações tipo  (nome-ano)
-\usepackage{natbib}  % citações tipo  [nome-ano]
+%\usepackage{natbib}  % citações tipo  [nome-ano]
 \usepackage{setspace}
 
 \usepackage[small]{caption}
@@ -130,7 +134,24 @@
 %\include{F429_cap1}
 %\include{F429_cap2}
 %AC - Diodo semicondutor
-\include{F429_cap2_ap}
+%\include{F429_cap2_ap}
+%----------------------------------
+\input{filtros}
+\newpage
+\input{transientes}
+%----------------------------------
+\newpage
+\input{receptor_am}
+%----------------------------------
+\newpage
+\input{linha_transmissao}
+%----------------------------------
+\newpage
+\input{Interferometros}
+\renewcommand\bibname{{Bibliografia}} %  will print "REFERENCES" instead of "BIBLIOGRAPHY"
+\bibliographystyle{plain}
+\addcontentsline{toc}{chapter}{Bibliografia} %  adds "REFERENCES" to the table of content
+\bibliography{bibliografia_F429}  % uses the references stored in Chapter1Radar.bib
 %AC
 
 

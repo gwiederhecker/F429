@@ -1,0 +1,15 @@
+\documentclass{book}
+\usepackage[sectionbib]{chapterbib}
+
+
+\begin{document}
+
+\chapter{Test Chapter Two}
+\cite{Fow75}
+\pagebreak
+\renewcommand\bibname{{REFERENCES}} %  will print "REFERENCES" instead of "BIBLIOGRAPHY"
+\bibliographystyle{plain}
+\addcontentsline{toc}{chapter}{REFERENCES} %  adds "REFERENCES" to the table of content
+\bibliography{bibliografia_F429}  % uses the references stored in Chapter1Radar.bib
+
+\end{document}
