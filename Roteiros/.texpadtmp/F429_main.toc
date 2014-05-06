@@ -18,5 +18,10 @@
 \contentsline {section}{\numberline {3}Diodo semicondutor e receptor AM}{6}{section.0.3}
 \contentsline {section}{\numberline {4}Linhas de transmiss\~ao}{11}{section.0.4}
 \contentsline {section}{\numberline {5}Interfer\^ometros}{14}{section.0.5}
-\contentsline {paragraph}{Michelson}{21}{figure.caption.47}
-\contentsline {paragraph}{Dedu\c c\~ao FP}{25}{section*.52}
+\contentsline {subsection}{\numberline {5.1}Objetivos}{14}{subsection.0.5.1}
+\contentsline {subsection}{\numberline {5.2}Roteiro}{20}{subsection.0.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Alinhamento dos interfer\^ometros}{21}{subsubsection.0.5.2.1}
+\contentsline {paragraph}{Michelson}{21}{figure.caption.44}
+\contentsline {subsubsection}{\numberline {5.2.2}Medida de deslocamento do espelho (Michelson \& Fabry-Perot)}{22}{subsubsection.0.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Determinando o comprimento de onda de uma fonte desconhecida (Michelson \& Fabry-Perot)}{23}{subsubsection.0.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Determinando a separa\c c\~ao de frequ\^encia do dubleto do S\'odio (Michelson \& Fabry-Perot)}{24}{subsubsection.0.5.2.4}
