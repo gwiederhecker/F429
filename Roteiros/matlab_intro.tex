@@ -1,0 +1,33 @@
+\section{\label{sec:nota_controle}Notas sobre os controle de instrumentos}
+O  \ml é um pacote comercial versátil que agrega desde rotinas para manipulação e processamento numérico à rotinas para comunicação entre computadores e \textit{hardware} de terceiros. O \ml é construído de forma modular, na qual recursos são incorporados na forma de \textit{toolboxes} relativamente independentes e 
+ Neste curso iremos explorar esta ferramenta para automatizar a aquisição de dados através do controle dos instrumentos de medição e processamento dos dados obtidos.   Em particular utilizaremos extensivamente o \href{http://www.mathworks.com/help/instrument/index.html}{\ic}.
+
+\section{Comandos básicos}
+\subsection{Operações matemáticas}
+O console de comandos do \ml funciona como uma calculadora, pode-se definir variáveis escalares ou matriciais e realizar operações matemáticas com as mesmas. A sequência abaixo ilustra algumas operações simples, note que o símbolo (>>) aparece automaticamente no console e não dever ser digitado.  Para uma descrição mais detalhada, vejo na página sobre , \href{http://www.mathworks.com/help/matlab/matlab_env/enter-statements-in-command-window.html}{entrada de variáveis}
+\subsection{Escalares}
+\begin{lstlisting}
+>> a=2
+>> b=3
+>> a*b
+ans =
+     6
+>> a+b
+ans =
+     5
+>> a/b
+ans =
+    0.6667
+\end{lstlisting}
+\subsection{Matrizes}
+Veja a página de ajuda sobre \href{http://www.mathworks.com/help/matlab/matlab_prog/create-numeric-arrays.html}{construção de vetores e matrizes}. 
+\subsection{Cadeia de caractéres - \textit{strings}}
+Veja a página de ajuda sobre \href{http://www.mathworks.com/help/matlab/matlab_prog/creating-character-arrays.html}{construção de \str}. 
+\begin{lstlisting}
+%% Connect to instrument and print its ID
+delete (instrfindall); % Apaga qualquer instrumento que fora criado anteriormente
+vinfo = instrhwinfo('visa', 'NI', 'USB');  %Descobre todos os instrumentos conectados ao computador através da interface USB        
+\end{lstlisting}
+\section{Comandos}
+a
+ 

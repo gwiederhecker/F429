@@ -1,13 +1,36 @@
-\BOOKMARK [0][-]{chapter.1}{Interfer\364metros}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Objetivos}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Introdu\347\343o}{chapter.1}% 3
-\BOOKMARK [2][-]{subsection.1.2.1}{Intefer\364metro de Michelson}{section.1.2}% 4
-\BOOKMARK [2][-]{subsection.1.2.2}{Interfer\364metro de Fabry-Perot}{section.1.2}% 5
-\BOOKMARK [1][-]{section.1.3}{Prepara\347\343o}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.4}{Material}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.5}{Roteiro}{chapter.1}% 8
-\BOOKMARK [2][-]{subsection.1.5.1}{Alinhamento dos interfer\364metros}{section.1.5}% 9
-\BOOKMARK [2][-]{subsection.1.5.2}{Medida de deslocamento do espelho \(Michelson \046 Fabry-Perot\)}{section.1.5}% 10
-\BOOKMARK [2][-]{subsection.1.5.3}{Determinando o comprimento de onda de uma fonte desconhecida \(Michelson\)}{section.1.5}% 11
-\BOOKMARK [2][-]{subsection.1.5.4}{Determinando a separa\347\343o de frequ\352ncia do dubleto do S\363dio \(Michelson \046 Fabry-Perot\)}{section.1.5}% 12
-\BOOKMARK [0][-]{figure.caption.14}{Bibliografia}{}% 13
+\BOOKMARK [0][-]{chapter.1}{ Experimento 0 - Introdu\347\343o}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Notas sobre os intrumentos}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{ Precis\343o de alguns intrumentos }{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{ Imped\342ncia interna dos instrumentos}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Notas sobre os controle de instrumentos}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{Comandos b\341sicos}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.3.1}{Opera\347\365es matem\341ticas}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.2}{Escalares}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.3}{Matrizes}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.4}{Cadeia de caract\351res - strings}{section.1.3}% 10
+\BOOKMARK [1][-]{section.1.4}{Comandos}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{ Experimento I - Filtros}{}% 12
+\BOOKMARK [1][-]{subsection.2.0.1}{Objetivos}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.0.2}{Introdu\347\343o}{subsection.2.0.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.0.2.1}{Diodo demodulador ou detector}{subsection.2.0.2}% 15
+\BOOKMARK [2][-]{subsection.2.0.3}{Prepara\347\343o}{subsection.2.0.1}% 16
+\BOOKMARK [2][-]{subsection.2.0.4}{Roteiro A - Circuito RC}{subsection.2.0.1}% 17
+\BOOKMARK [2][-]{subsection.2.0.5}{Roteiro B - Circuito RLC}{subsection.2.0.1}% 18
+\BOOKMARK [2][-]{subsection.2.0.6}{Relat\363rio}{subsection.2.0.1}% 19
+\BOOKMARK [1][-]{section.2.1}{Medidas de resist\352ncia, capacit\342ncia e indut\342ncia}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.1.1}{Roteiro}{section.2.1}% 21
+\BOOKMARK [3][-]{subsubsection.2.1.1.1}{Resist\352ncia interna do gerador}{subsection.2.1.1}% 22
+\BOOKMARK [3][-]{subsubsection.2.1.1.2}{Capacit\342ncia}{subsection.2.1.1}% 23
+\BOOKMARK [0][-]{chapter.3}{Interfer\364metros}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Objetivos}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Introdu\347\343o}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Intefer\364metro de Michelson}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.2}{Interfer\364metro de Fabry-Perot}{section.3.2}% 28
+\BOOKMARK [1][-]{section.3.3}{Prepara\347\343o}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.4}{Material}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.5}{Roteiro}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.5.1}{Alinhamento dos interfer\364metros}{section.3.5}% 32
+\BOOKMARK [2][-]{subsection.3.5.2}{Medida de deslocamento do espelho \(Michelson \046 Fabry-Perot\)}{section.3.5}% 33
+\BOOKMARK [2][-]{subsection.3.5.3}{Determinando o comprimento de onda de uma fonte desconhecida \(Michelson\)}{section.3.5}% 34
+\BOOKMARK [2][-]{subsection.3.5.4}{Determinando a separa\347\343o de frequ\352ncia do dubleto do S\363dio \(Michelson \046 Fabry-Perot\)}{section.3.5}% 35
+\BOOKMARK [0][-]{figure.caption.30}{Bibliografia}{}% 36

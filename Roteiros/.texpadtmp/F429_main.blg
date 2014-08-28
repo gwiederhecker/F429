@@ -2,11 +2,12 @@ This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: F429_main.aux
 A level-1 auxiliary file: f429_face.aux
+A level-1 auxiliary file: F429_roteiro_err.aux
 The style file: plain.bst
 Database file #1: ../bibliografia_F429.bib
 You've used 2 entries,
             2118 wiz_defined-function locations,
-            514 strings with 4246 characters,
+            515 strings with 4266 characters,
 and the built_in function-call counts, 541 in all, are:
 = -- 49
 > -- 25

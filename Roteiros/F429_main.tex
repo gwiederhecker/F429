@@ -70,9 +70,34 @@
            shorten >=2pt,}
 }
 %\ctikzset{bipoles/length=1 cm}
-
-%% Hyperlink options
+%**************
+%Custom colors
+%**************
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\usepackage{listings}
 \usepackage{hyperref}
+\lstset{frame=tb,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%hyperlinks
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=red,urlcolor=blue}
+%% Hyperlink options
+%\usepackage{hyperref}
 %\hypersetup{colorlinks=true,       % false: boxed links; true: colored links
 %	linkcolor=blue,          % color of internal links
 %	citecolor=red,        % color of links to bibliography
@@ -84,6 +109,13 @@
 %	}         % show bookmarks bar?
 %COLORED BOXES
 
+
+%-----------------------------------------------------------
+%% Abrevia figuras e tabelas
+\def\figurename{Fig.}
+\def\tablename{Tab.}
+
+%-----------------------------------------------------------
 %% tamanho do texto e margens
 \setlength{\topmargin}{-15pt} % extra vert. space + at the top of header: 23pt
 \setlength{\oddsidemargin}{0pt} % extra spc added at the left of odd page: 0pt
@@ -118,9 +150,6 @@
 
 %% Commands
 \input{../shortcuts}
-%% Abrevia figuras e tabelas
-\def\figurename{Fig.}
-\def\tablename{Tab.}
 
 %% Página de rosto
 \include{f429_face}
@@ -131,13 +160,16 @@
 %%% line spacing
 \onehalfspacing
 % Cap. 1 - Introdução
+\include{F429_roteiro_err}
+\include{matlab_intro}
 %\include{F429_cap1}
 %\include{F429_cap2}
 %AC - Diodo semicondutor
 %\include{F429_cap2_ap}
 %%----------------------------------
-%\input{filtros}
-%\newpage
+\input{filtros}
+\newpage
+\input{experimento_0}
 %\input{transientes}
 %%----------------------------------
 %\newpage

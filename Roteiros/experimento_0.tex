@@ -1,0 +1,86 @@
+\section{\label{sec:res_cap_ind}Medidas de resistência, capacitância e indutância}
+
+\subsection*{Objetivos}
+\begin{itemize}
+\item Familiarizar com os instrumentos de medição: osciloscópio e gerador de funções.
+\item Caracterizar componentes passivos utilizando um osciloscópio:
+\begin{itemize}
+\item resistência interna do gerador de funções
+\item capacitância
+\item indutância
+\end{itemize}
+\end{itemize}
+ 
+\subsection*{Material}
+\begin{itemize}
+\item Resistores 
+\end{itemize}
+
+\subsection{Roteiro}
+\subsubsection{Resistência interna do gerador}
+\input{fig_divisor_tensao.tex}
+\pT Podemos representar todos os componentes internos do nosso gerador de corrente alternada (AC) por uma fonte \cite{Brophy:1990tm} ideal associada a uma resistência (ou impedância) equivalente, como na \fig{\ref{fig:divisor_tensao}}a. Uma maneira simples de determinar esta resisência consiste em explorar o conceito do divisor de tensão. Nos circuitos mostrados na \fig{\ref{fig:divisor_tensao}}a podemos escrever a Lei de Kirchoff para os circuitos
+\begin{subequations}
+\begin{eqnarray}
+\label{eq:exp0_1}\epsilon_g-V_0=0\text{ (para o circuito aberto, \fig{\ref{fig:divisor_tensao}}a),}\\
+\label{eq:exp0_2}\epsilon_g-R_g i-R i=0\text{ (para o circuito fechado, \fig{\ref{fig:divisor_tensao}}b).}
+\end{eqnarray}
+\end{subequations}
+Com a Eq. \ref{eq:exp0_2}, concluímos que a corrente é dada por $i=\epsilon_g/(R_g+R)$, pela lei de Ohm sabemos que $V=Ri$, portanto, $V=V_0 R/(R_g+R)$. Definindo $x=V_0/V$, obtemos a seguinte expressão,
+\begin{equation}
+\label{eq:exp0_3}\boxed{R_g=R(x-1)}
+\end{equation}
+O comportamento da relação dada pela \eq{\ref{eq:exp0_3}} é mostrado na \fig{\ref{fig:divisor_tensao}}c. Note que quando $R=R_g$, temos $V/V_0=0.5$. Exploraremos este fato para verificar a resistência interna do gerador.
+\pE
+\input{fig_protoboard.tex}
+\begin{enumerate}
+\item Monte o circuito da \fig{\ref{fig:divisor_tensao}}a. A seta vertical indica que você conectará o terminal \textcolor{red}{vermelho (vivo)} do cabo BNC-banana na ponta da seta, enquanto que o terminal preto (terra) no rabo da seta. \textcolor{red}{Note que se você inverter esta conexão, você estará fazendo um curto-circuito na fonte! Esta fonte, em particular, não irá explodir mas você encontrará outras fontes ao longo da sua carreira que o farão, portanto seja cuidadoso.}
+\item Ligue o gerador de funções e selecione a forma de onda senoidal, na frequência de $f\approx 100$\hz. Ajuste a amplitude da onda em torno de $V_0\approx 2$\V. Anote os valores ajustados através das medidas do oscilscópio; os indicadores do gerador de funções lhe servirá apenas de guia.
+\item Ajuste o gatilho do osciloscópio, as escalas temporais e verticais e meça $V_0$ (amplitude) da onda observada. Configure a aquisição do osciloscópio para o modo 'média' e selecione 16 médias para tal medida.
+\item Conecte o resistor de \med{R}{50}{\ohm} entre os terminais de medição, conforme indica a \fig{\ref{fig:divisor_tensao}}b e anote a amplitude do sinal $V$ medida pelo osciloscópio.
+\item Meça o valor da resistência com um multímetro.
+\item Utilizando os valores medidos e a \eq{\ref{eq:exp0_3}} calcule $R_g\pm\delta R_g$. \textcolor{red}{Você utilizará este valor até o final do curso, portanto faça este procedimento com cuidado.}
+%\item Repitas os três últimos ítens acima e construa uma tabela com $V/V_0$ em %função da resistência.
+\end{enumerate}
+
+\subsubsection{Capacitância}
+\input{fig_rc_tensao_em_c.tex}
+\paragraph{Teoria}
+A capacitância de um capacitor, $C$, pode ser medida de várias maneiras. Um dos métodos mais simples consiste em medir a constante de tempo $\tau = RC$ de carga ou descarga do capacitor através de uma resistência. Se escrevemos a lei de Kirchoff para este circuito, obtemos a seguinte equação diferencial para a carga do circuito,
+\begin{equation}
+\label{eq:ode_rc}q'(t)+\frac{1}{\tau}q(t)=V_1(t),
+\end{equation}
+sendo $\tau=RC$. Como a excitação é uma quadrada, é como se alternássemos periodicamente a polaridade de uma fonte de corrente contínua. Suponha que inicialmente o capacitor esta descarregado $q(t=0)=0$, como na \fig{\ref{fig:rc_tensao_em_c}}b,c. Ao ligarmos a fonte com amplitude $V_1(t)=V_{10}$, surgira uma tensão entre os terminais do capacitor e portanto acumular-se-ão cargas no mesmo. Estas cargas são obtidas resolvendo a \eq{\ref{eq:ode_rc}} com a condição inicial $q(0)=0$. Para $t\le T/2$, a solução será
+\begin{equation}
+\label{eq:ode_rc_sol1}q_\text{c}(t)=CV_{10} \left(1-e^{-\frac{t}{\tau}}\right).
+\end{equation}
+Portanto em $t=T/2$, a carga acumulada no capacitor será $q(T/2)=CV_{10}(1-2\exp(-T/2\tau))$. Neste instante a polaridade da tensão é revertida para $V_1(T/2)=-V_{10}$, como mostra a \fig{\ref{fig:rc_tensao_em_c}}. Para encontrar a carga no instante $t=T$, resolvemos a \eq{\ref{eq:ode_rc}} novamente com a condição inicial em $q(T/2)$. A solução, válida para $T/2<t<T$ é dada por  
+\begin{equation}
+\label{eq:ode_rc_sol2}q_\text{d}(t)=-CV_{10} \left(e^{-\frac{t}{\tau }}\right) \left(e^{\frac{t}{2 \tau }}-1\right)^2.
+\end{equation}
+A amplitude (pico-a-pico) da onda de saída portanto é dada por,
+\begin{equation}
+\label{eq:ode_rc_sol3}V_{2pp}=\frac{q_\text{c}(T/2)-q_\text{d}(T)}{C}=V_0 \left(e^{-\frac{T}{\tau }}-3 e^{-\frac{T}{2 \tau }}+2\right)
+\end{equation}
+Se o período for muito curto comparado com o tempo de carga do circuito, i.e., $T\ll \tau$, podemos expandir a \eq{\ref{eq:ode_rc_sol3}} em série de Taylor\footnote{$\exp(x)\approx 1+x$}, portanto
+\begin{equation}
+\label{eq:ode_rc_sol4}V_{2pp}\approx V_{10}\frac{T}{2 \tau }=V_{1pp}\frac{T}{4 \tau }
+\end{equation}
+Esta será a amplitude  da onda, quase triangular, que iremos observar no osciloscópio (veja \fig{\ref{fig:rc_tensao_em_c}}). Note que a amplitude da onda diminui quando a frequencia da onda quadrada ($f=1/T$) aumenta. Neste limite de frequência alta, pode-se usar a expressão \eq{\ref{eq:ode_rc_sol4}} para estimar a capacitância do circuito; basta isolar $C$:
+\begin{equation}
+\label{eq:ode_rc_sol5}\boxed{C= \frac{V_{1pp}}{V_{2pp} }\frac{T}{4 R }\text{, se }T\ll\tau}
+\end{equation}
+Usaremos a \eq{\ref{eq:ode_rc_sol5}} para calcular a capacitância, sendo que $V_{1pp}$ e $V_{2pp}$ são as tensões pico-a-pico medidas nos canais 1 e 2 do osciloscópio.
+\paragraph{Procedimento experimental}
+\begin{enumerate}
+\item Monte o circuito da \fig{\ref{fig:divisor_tensao}}a. A seta vertical indica que você conectará o terminal \textcolor{red}{vermelho (vivo)} do cabo BNC-banana na ponta da seta, enquanto que o terminal preto (terra) no início da seta. \textcolor{red}{Note que se você inverter esta conexão, você estará fazendo um curto-circuito na fonte! Esta fonte, em particular, não irá explodir mas você encontrará outras fontes ao longo da sua carreira que o farão, portanto seja cuidadoso.}
+\item Ligue o gerador de funções e selecione a forma de onda senoidal, na frequência de $f\approx 100$\hz. Ajuste a amplitude da onda em torno de $V_0\approx 2$\V. Anote os valores ajustados através das medidas do oscilscópio; os indicadores do gerador de funções lhe servirá apenas de guia.
+\item Ajuste o gatilho do osciloscópio, as escalas temporais e verticais e meça $V_0$ (amplitude) da onda observada. Configure a aquisição do osciloscópio para o modo "média" e selecione 16 médias para tal medida.
+\item Conecte o resistor entre os terminais de medição, conforme indica a \fig{\ref{fig:divisor_tensao}}b e repita a medida, anote $V$.
+\item Meça o valor da resistência com um multímetro.
+\item Repitas os três últimos ítens acima e construa uma tabela com $V/V_0$ em função da resistência.
+\end{enumerate}
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+\newpage
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+

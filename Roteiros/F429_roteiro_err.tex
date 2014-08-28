@@ -1,0 +1,20 @@
+\chapter{\label{sec:filtros} Experimento 0 - Introdução}
+\section{\label{sec:nota_instrumentos}Notas sobre os intrumentos}
+\input{fig_instrumentos.tex}
+\subsection{\label{sec:precisao} Precisão de alguns intrumentos }
+\textcolor{red}{Como em qualquer processo de medida, existe uma precisão com a qual os instrumentos utilizados no LF25 conseguem fazer medidas.} Em razão da complexidade de alguns deles, como o osciloscópio mostrado na \fig{\ref{fig:instrumentos}}, não é trivial compreender todos os fatores que influenciam a precisão nas medições destes equipamentos. A precisão é influenciado por aspectos analógicos, i.e., a precisão dos componentes internos, como por aspectos digitais, i.e., a resolução do conversor analógico digital. Portanto o fabricante fornece, \textbf{no manual do equipamento}, qual a precisão da medida e as condições necessárias para obtê-las.
+\begin{itemize}
+\item O erro do multímetro digital Minipa ET 2002 é \textcolor{blue}{($\pm 1$\% do valor de leitura + 1 dígito)}.\\
+Exemplo: Se \med{R}{46.8}{\ohm}, então \dm{R}{(48/100+0.1)}{\ohm}$\approx0.6$\ohm.
+\item O erro de medição com o osciloscópio digital Tek TDS 1002 (veja o \href{http://www.ifi.unicamp.br/~gustavo/disciplinas/f429/manual_tds200.pdf}{manual}) depende de quantas formas de onda são utilizadas para a média. Para uma média de 16 (ou mais) formas de onda utilizando os cursores, o erro nas medidas de diferenças de \textbf{voltagem} é \textcolor{blue}{( $\pm3$\% do valor de leitura + 5\% da escala vertical (V/div) )}.\\
+Exemplo: Se a leitura de uma diferença de voltagem é $V = 12.0$\V, na escala de 2\V/div, então 
+$\delta V = (3\times 12.0/100 + 2\times0.05) = 0.46$\V $\approx 0.5$\V (Erro relativo $\delta V/V\approx$ 4\%).\\
+Para uma medida \textbf{temporal}, a precisão é de \textcolor{blue}{($\pm0.01\%$ do valor de leitura + 0.4\% da escala vertical (s/div) +0.4~ns)}.\\
+Exemplo: Se mede $t = 600$ ns na escala de 100 ns/div, então
+$\delta t = (0.01\times600/100 + 0.4\times100/100 + 0.4)$~ns = $(0.06 + 0.4 + 0.4)$~ns $\approx 0.9$~ns (Erro relativo $\delta t/t=0.15\%$).
+\end{itemize}
+\textcolor{red}{Note que, com osciloscópio, medidas de tempo são geralmente muito mais precisas que medidas de voltagem!}
+
+\subsection{\label{sec:impedancia_interna} Impedância interna dos instrumentos}
+Já somos familiares com o conceito de resistência interna de alguns instrumentos, por exemplo, sabemos que os voltímetros possuem uma enorme resistência interna ($\approx 10^9$~$\Omega$). Os osciloscópios e geradores de corrente alternada também possuem resistência interna, porém costumam possuir também uma capacitância ou indutância interna. Denominamos a associação equivalente destas resistências, capacitâncias e indutânicas como \textbf{impedância interna} do equipamento.\\
+Por exemplo, o osciloscópio Tek TDS 210 (em acoplamento DC) possui \mede{R}{1}{2\%}{\Mohm} em paralelo com \mede{C}{20}{3}{\pF}. Já o gerador funções Tek CFG253 e CFG250 possui uma impedânica interna, \mede{R}{50}{5}{\ohm}.
